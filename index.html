@@ -11,7 +11,8 @@
   <!-- Font-awesome  -->
   <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <!-- Custom CSS (styles.css) -->
   <link rel="stylesheet" href="styles.css">
   <!-- AOS Library CSS -->
@@ -24,25 +25,30 @@
 
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
-    <a class="navbar-brand" href="index.html"> <img class="nav-logo" src="images/logo.png" alt="logo"  width="50px"> </a> <h3> DesiFoodFormula</h3>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="index.html"> <img class="nav-logo" src="images/logo.png" alt="logo" width="50px"> </a>
+    <h3> DesiFoodFormula</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item nav-item1">
-          <a class="nav-link" href="products.html">Products <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="">Contact<span class="sr-only">(current)</span></a>
         </li>
-        
+
         <li class="nav-item">
-          <a class="nav-link" href="#company">Company</a>
+          <a class="nav-link" href="#company">All Recipes</a>
         </li>
         <li>
-          <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal" data-target="#modalLRForm" ><i class="fas fa-sign-in-alt"></i> Login</a>
+          <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal" data-target="#modalLRForm"><i
+              class="fas fa-sign-in-alt"></i> Login</a>
         </li>
         <li>
-          <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered cascading-modal" role="document">
               <!--Content-->
               <div class="modal-content">
@@ -53,11 +59,13 @@
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                      <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
+                          class="fas fa-user mr-1"></i>
                         Login</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                      <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                          class="fas fa-user-plus mr-1"></i>
                         Sign Up</a>
                     </li>
                   </ul>
@@ -87,7 +95,8 @@
                       </div>
                       <!--Footer-->
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                          data-dismiss="modal">Close</button>
                       </div>
 
                     </div>
@@ -102,16 +111,6 @@
                           <label data-error="wrong" data-success="right" for="modalLRInput13">Username</label>
                           <input type="text" id="modalLRInput13" class="form-control form-control-sm validate">
                         </div>
-
-                        
-
-
-
-                       
-
-                        
-
-                        
 
                         <div class="md-form form-sm mb-5">
                           <label data-error="wrong" data-success="right" for="modalLRInput12">Email</label>
@@ -138,7 +137,8 @@
                       </div>
                       <!--Footer-->
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                          data-dismiss="modal">Close</button>
                       </div>
                     </div>
                     <!--/.Panel 8-->
@@ -149,27 +149,69 @@
               <!--/.Content-->
             </div>
           </div>
-          <a type="button" class="btn btn-outline-dark nav-btn"  data-toggle="modal" data-target="#modalLRForm"><i class="fas fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+          <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal" data-target="#modalLRForm"><i
+              class="fas fa-user-plus" aria-hidden="true"></i> Sign Up</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  
+  <!-- Main Body -->
+  <section class="withoutSearch">
+    <div id="recipeCards" class="row">
 
-  
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
+        <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
 
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
+        <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
+        <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
+        <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+
+
+  <!--FOOTER -->
+  <footer class="white-section" id="footer">
   <div class="cta container-fluid">
 
-    <div class="row">
-
-      <div class="col-lg-3 cta-column cta-col-1">
+      <div class="cta-col-1">
         <img src="images/logo.png" alt="logo image">
         <p>A Nevada Based Corporation</p>
         <p>support@pourlog.com</p>
+        <div class="icons"><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i></div>
       </div>
-
-      
 
       <div class="col-lg-5 cta-column cta-col-3">
         <div class="cta3-section">
@@ -186,21 +228,28 @@
           <a href="resources.html">Resources</a>
           <a href="#company">Company</a>
         </div>
-      </div>
-
-    </div>
-    <p class="footer">© 2020 Copyright: Pourlog.com</p>
+      </div> 
+    <p class="paraInFooter">© 2020 Copyright: Pourlog.com</p>
   </div>
+</footer> 
+
 
 
   <!-- Jquery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
   <!-- Custom JS (index.js) -->
   <script src="index.js" charset="utf-8"></script>
   <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
   <!-- AOS Library JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

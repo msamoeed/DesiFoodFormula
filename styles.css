@@ -205,94 +205,7 @@ video {
   display: inherit;
   }
 
-.applications-buttons {
-  text-align: center;
-  margin-bottom: 0;
-}
 
-.application-1-button, .application-2-button {
-  font-size: 3.25rem;
-  padding: 0 2rem 0 2rem;
-  color: #cfd9e6;
-  outline: none;
-  border: none;
-  background-color: #ffffff;
-}
-
-.application-1-button:hover, .application-2-button:hover, .application-1-button:focus, .application-2-button:focus {
-  color: #32c5d2 !important;
-  border: none;
-  outline: none;
-}
-
-.application-1-button p, .application-2-button p {
-  color: #525e64;
-  text-transform: uppercase;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.42857;
-}
-
-.triangle {
-  border-top: 0.9375rem solid transparent;
-  border-bottom: 0.9375rem solid #2f353b;
-  border-left: 0.9375rem solid transparent;
-  border-right: 0.9375rem solid transparent;
-  margin-left: 30%;
-  width: 0;
-}
-
-.applications-content h4 {
-  color: #ffffff;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1.875rem;
-  line-height: 1.1;
-  margin: 0.5rem 0 1rem 0;
-  display: inline-block;
-  width: 50%;
-}
-
-.applications-content {
-  padding: 4rem 5.55rem;
-  background-color: #2f353b;
-}
-
-.applications-content img {
-  width: 25rem;
-  height: 18.75rem;
-  padding: 0.3125rem;
-  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
-  float: right;
-  vertical-align: middle;
-  display: block;
-}
-
-.applications-content p {
-  color: #838e9a;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 300;
-  margin: 1.875rem 0;
-  display: inline-block;
-  width: 50%;
-}
-
-.applications-content button {
-  margin-top: 0.75rem;
-  color: #ffffff;
-  background-color: #32c5d2;
-  border-color: #32c5d2;
-  padding: 0.375rem 1.125rem 0.25rem 1.125rem;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0;
-  display: block;
-}
 
 .anim {
   animation: fadeAnimation 200ms;
@@ -305,94 +218,6 @@ video {
   to{
     opacity: 1;
   }
-}
-
-/* Pricing Section */
-.pricing {
-  background-color: #f7f7f7;
-}
-
-.pricing .row {
-  margin-top: 4rem;
-}
-
-.pricing-card {
-  background-color: #ffffff;
-  border: 1rem solid #f7f7f7;
-  text-align: center;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 2rem;
-}
-
-.pricing-type {
-  background-color: #32c5d2;
-  color: #ffffff;
-  display: inline-block;
-  padding: 0.25rem 0.625rem 0.125rem 0.625rem;
-  margin: 0.625rem 0 2.5rem 0;
-}
-
-.pricing-price {
-  color: #3f444a;
-  font-size: 2.5rem;
-}
-
-.pricing-description {
-  font-weight: 400;
-  color: #666666;
-  font-size: 0.9375rem;
-  margin: 0 0 0.625rem 0;
-}
-
-.pricing-btn {
-  color: #7f8c97!important;
-  font-weight: 700;
-  padding: 0.625rem 1.25rem 0.5rem 1.25rem;
-  border: 0.125rem solid #7f8c97;
-  border-radius: 0;
-  margin: 0.9375rem 0 0.625rem 0;
-}
-
-.pricing-btn:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.pricing-btn:hover {
-  text-decoration: none;
-  background-color: #7f8c97;
-  color: #ffffff!important;
-}
-
-/* About Section */
-.about .row {
-  padding: 2.75rem 0 0 5rem;
-}
-
-.sub-heading {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 700;
-  color: #2f353b;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.25rem;
-}
-
-.about-content {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 300;
-  color: #5c6873;
-  vertical-align: middle;
-}
-
-.about-carousel {
-  max-width: 17.39rem;
-  max-height: 23.17em;
-  padding: 0.3125rem;
-  border: 0.0625rem solid #5c6873;
-  margin-right: 2rem;
 }
 
 /* CTA Section */
@@ -452,11 +277,12 @@ video {
   vertical-align: top;
 }
 
-.footer {
+.paraInFooter {
   text-align: center;
   margin-top: 1rem;
   font-size: 0.85rem;
 }
+
 
 
 /* PRODUCTS.HTML */
@@ -704,7 +530,7 @@ hr{
 }
 
 .passwd-pattern{
-  color: #e8505b;
+  color:  #DB6C79;
 }
 
 
@@ -986,6 +812,12 @@ hr{
   border-bottom: 2rem solid #f7f7f7;
   }
 
+}
+
+/* Cards */
+.recipeCard{
+  padding: 5% 3%;
+  margin: 20px;
 }
 
 @media only screen and (min-width: 991px) and (max-width: 996px) {
