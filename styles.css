@@ -1,6 +1,4 @@
-html,body{
-    overflow-x: hidden;
-}
+
 
 html {
  font-size: 100%;
@@ -15,21 +13,22 @@ html {
 
 /* Navbar section*/
 .navbar {
-  padding: 1% 6%;
+  padding: 1% 5%;
   border-bottom: 0.0625rem solid #cfd9e6;
 
 }
 
 .nav-logo {
   width: 9rem;
-  height: 7rem;
+  height: 5rem;
 }
-html,
-body {
+
+html, body {
+  padding-top: 5%;
   height: 100%;
 }
 
-body {
+/* body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -37,7 +36,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
-}
+} */
 
 .form-signin {
   width: 100%;
