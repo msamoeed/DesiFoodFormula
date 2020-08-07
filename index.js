@@ -125,7 +125,7 @@ $("#addstepsbutton").click(function() {
   
   var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc" id="badgeStep" class="btn btn-primary  badgerecipe">' + ingr ;
 
-var element =   $('#steps2List').append("<p id='badgeStep' >" + ingr + "</p>");
+var element =   $('#steps2List').append("<p id=badgeStep' >" + ingr + "</p>");
 steps.push(ingr);
  
 

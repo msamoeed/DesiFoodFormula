@@ -20,8 +20,10 @@ html {
 
 }
 .header-recipe{
+  margin: 1pc;
   background: #3f444a;
-  background-color: #992121;
+  background-color: #810000;
+  text-decoration-color: #cfd9e6;
 } 
 
 .form-reipeadder{
@@ -57,10 +59,10 @@ margin: 0.8pc;
 }
 .container-recipe{
   padding: 0.3pc;
-  margin-top: 0.5pc;
+  margin-top: 0.8pc;
   border-radius: .2pc;
-  background-color: #992121;
-  border-color: #000000;
+  background-color: #810000;
+  border-color: #810000;
 }
 
 .form-rowRecipe{
