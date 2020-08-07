@@ -1,4 +1,6 @@
-
+html,body{
+    overflow-x: hidden;
+}
 
 html {
  font-size: 100%;
@@ -13,18 +15,75 @@ html {
 
 /* Navbar section*/
 .navbar {
-  padding: 1% 5%;
+  padding: 0.2% 6%;
   border-bottom: 0.0625rem solid #cfd9e6;
 
 }
+.header-recipe{
+  background: #3f444a;
+  background-color: #992121;
+} 
 
-.nav-logo {
-  width: 9rem;
-  height: 5rem;
+.form-reipeadder{
+  text-align: center;
+  margin-left: 35pc;
+  margin-right:35pc;
+  margin-top: 15pc;
+  margin-bottom: 20pc;
+  align-self: center;
+
+
+  
+}
+ul{
+  list-style-type: none;
 }
 
-html, body {
-  padding-top: 5%;
+.h3-recipeherade{
+  color:white;
+  
+  
+}
+.badgerecipe{
+  
+  margin: 10;
+}
+.h5-steps{
+
+margin: 0.8pc;
+}
+.icon-cross{
+  margin-left: 8pc;
+}
+.container-recipe{
+  padding: 0.3pc;
+  margin-top: 0.5pc;
+  border-radius: .2pc;
+  background-color: #992121;
+  border-color: #000000;
+}
+
+.form-rowRecipe{
+  margin-top: 0.8pc;
+}
+
+.submitButtonR{
+  margin-top: 5pc;
+}
+
+
+  .col-recipeform{
+    padding-left: 10pc;
+    padding-right: 10pc;
+  }
+
+.nav-logo {
+  width: 8rem;
+  height: 8rem;
+}
+html,
+body {
+  
   height: 100%;
 }
 

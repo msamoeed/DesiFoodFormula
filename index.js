@@ -92,9 +92,71 @@ $(document).ready(navHrAdd);
 $(window).resize(navHrRemove);
 
 // Add navbar margin when expanded in products.html
-$(".navbar-toggler").click(function () {
+$(".navbar-toggler").click(function () {  
   $(".phone-container, .screenshot-container, .overlay-container").toggleClass("navbar-expand-margin");
 })
+
+var data = [];
+var steps = [];
+
+$("#addrecipebutton").click(function() {
+ 
+    var ingr = $("#ingred").val();
+    data.push(ingr);
+ 
+    var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc" id="badgeRec" class="btn btn-primary  badgerecipe">' + ingr ;
+
+  var element =   $('.list-group').after(htmlString);
+   
+
+});
+
+$("#removerecipebutton").click(function(){
+
+  $('#badgeRec').remove();
+  data.pop();
+});
+
+
+$("#addstepsbutton").click(function() {
+ 
+  var ingr = $("#steps").val();
+  steps.push(ingr);
+  
+  var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc" id="badgeStep" class="btn btn-primary  badgerecipe">' + ingr ;
+
+var element =   $('#steps2List').append("<p id='badgeStep' >" + ingr + "</p>");
+steps.push(ingr);
+ 
+
+});
+
+
+$("#removestepsbutton").click(function(){
+
+  $('#badgeStep').remove();
+ steps.pop();
+});
+
+  
+
+ 
+    
+
+
+
+ 
+  
+  
+                    
+
+
+ 
+
+
+
+
+
 
 // Make the height of both carousel items equal
 // $(document).ready(function () {

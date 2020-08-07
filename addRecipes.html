@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>DesiFoodFormula</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicons.png">
+    <!-- Font-awesome  -->
+    <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- Custom CSS (styles.css) -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Tags for responsiveness -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+        <a class="navbar-brand" href="index.html"> <img class="nav-logo" src="images/logo.png" alt="logo" width="50px">
+        </a>
+        <h3> DesiFoodFormula</h3>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item nav-item1">
+                    <a class="nav-link" href="">Contact<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#company">All Recipes</a>
+                </li>
+                <li>
+                    <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal"
+                        data-target="#modalLRForm"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </li>
+                <li>
+                    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered cascading-modal" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+
+                                <!--Modal cascading tabs-->
+                                <div class="modal-c-tabs">
+
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
+                                                    class="fas fa-user mr-1"></i>
+                                                Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                                    class="fas fa-user-plus mr-1"></i>
+                                                Sign Up</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panels -->
+                                    <div class="tab-content">
+                                        <!--Panel 7-->
+                                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                                            <!--Body-->
+                                            <div class="modal-body mb-1">
+                                                <div class="md-form form-sm mb-5">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput10">Email</label>
+                                                    <input type="email" id="modalLRInput10"
+                                                        class="form-control form-control-sm validate">
+                                                </div>
+
+                                                <div class="md-form form-sm mb-4">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput11">Password</label>
+                                                    <input type="password" id="modalLRInput11"
+                                                        class="form-control form-control-sm validate">
+                                                </div>
+                                                <div class="text-center mt-2 log-sign-btn">
+                                                    <button form="modalLRForm" type="submit"
+                                                        class="btn btn-info">LogIn</i></button>
+                                                </div>
+                                                <div class="text-center mt-2">
+                                                    <a href="#">Forgot Password ?</a>
+                                                </div>
+                                            </div>
+                                            <!--Footer-->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+
+                                        </div>
+
+                                        <!--Panel 8-->
+                                        <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                            <!--Body-->
+                                            <div class="modal-body">
+
+                                                <div class="md-form form-sm mb-5">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput13">Username</label>
+                                                    <input type="text" id="modalLRInput13"
+                                                        class="form-control form-control-sm validate">
+                                                </div>
+
+                                                <div class="md-form form-sm mb-5">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12">Email</label>
+                                                    <input type="email" id="modalLRInput12"
+                                                        class="form-control form-control-sm validate">
+                                                </div>
+
+                                                <div class="md-form form-sm mb-5">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput13">Password</label>
+                                                    <input type="password" id="modalLRInput13"
+                                                        class="form-control form-control-sm validate">
+                                                    <p class="passwd-pattern">Password should be 7 characters long</p>
+                                                </div>
+
+                                                <div class="md-form form-sm mb-5">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput13">Repeat Password</label>
+                                                    <input type="password" id="modalLRInput13"
+                                                        class="form-control form-control-sm validate">
+                                                    <p class="passwd-pattern">Password should be 7 characters long</p>
+                                                </div>
+
+
+                                                <div class="text-center form-sm mt-2 log-sign-btn">
+                                                    <button form="modalLRForm" type="submit" class="btn btn-info"
+                                                        class="btn btn-info">Sign up</button>
+                                                </div>
+
+                                            </div>
+                                            <!--Footer-->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                        <!--/.Panel 8-->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                    <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal"
+                        data-target="#modalLRForm"><i class="fas fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <form class="form-reipeadder">
+
+        <h4>
+            Add a Recipe
+        </h4>
+
+        <div class="form-row form-rowRecipe ">
+
+            <div class="col col-recipeform">
+
+                <input type="text" class="form-control" placeholder="Name of Recipe">
+            </div>
+
+            <div class="col col-recipeform">
+                <input type="text" class="form-control" placeholder="Total Time">
+            </div>
+
+            <p>
+                mins
+            </p>
+
+
+        </div>
+
+        </div>
+
+        <div class="form-row form-rowRecipe">
+
+            <div class="col">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Add an ingrediant"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingred">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" id="addrecipebutton" type="button">+ </button>
+                        <button class="btn btn-outline-secondary" id="removerecipebutton" type="button">-</button>
+                    </div>
+                </div>
+                <!-- <ul class="list-group" id="ingredList">
+                    <li class="list-group-item active">Ingredients</li>
+
+                </ul> -->
+
+                <h5 class="list-group"> Ingrediants</h5>
+            </div>
+
+
+            <div class="col">
+
+                
+                
+
+            </div>
+
+            
+        </div>
+
+        <h5 class="h5-steps">
+           Add Steps
+        </h5>
+
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Add Steps"
+                aria-label="Recipient's username" aria-describedby="basic-addon2" id="steps">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" id="addstepsbutton" type="button">+ </button>
+                <button class="btn btn-outline-secondary" id="removestepsbutton" type="button">-</button>
+            </div>
+        </div>
+        <h5 class="list-group"> STEPS </h5>
+        <ol class="list-group2" id="steps2List">
+            
+
+        </ol>
+
+        <h5 class="h5-steps">
+            Add Photo
+         </h5>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+        </div>
+
+        <h5 class="h5-steps">
+            Add Description
+         </h5>
+ 
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Description</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+
+
+
+
+          <button type="button" class="btn btn-secondary btn-lg btn-block submitButtonR">Submit</button>
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+    <!--FOOTER -->
+    <footer class="white-section" id="footer">
+        <div class="cta container-fluid">
+
+            <div class="cta-col-1">
+                <img src="images/logo.png" alt="logo image">
+                <p>A Nevada Based Corporation</p>
+                <p>support@pourlog.com</p>
+                <div class="icons"><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i
+                        class="fab fa-instagram"></i></div>
+            </div>
+
+            <!-- <div class="col-lg-5 cta-column cta-col-3">
+          <div class="cta3-section">
+            <h4 class="sub-heading">Explore</h4>
+            <hr class="blue-hr">
+            <a href="#features">Features</a>
+            <a href="#applications">Applications</a>
+            <a href="#pricing">Pricing Plan</a>
+          </div>
+          <div class="cta3-section">
+            <h4 class="sub-heading">Navigate</h4>
+            <hr class="blue-hr">
+            <a href="products.html">Products</a>
+            <a href="resources.html">Resources</a>
+            <a href="#company">Company</a>
+          </div>
+        </div>  -->
+
+            <p class="paraInFooter">© 2020 Copyright: Pourlog.com</p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Custom JS (index.js) -->
+    <script src="index.js" charset="utf-8"></script>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+
+
+</body>
+
+</html>
