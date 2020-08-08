@@ -1,0 +1,388 @@
+html,body{
+    overflow-x: hidden;
+}
+
+html {
+ font-size: 100%;
+}
+
+/* INDEX.HTML */
+
+/* Container Fluid */
+.container-fluid {
+  padding: 4% 5.5%;
+  text-align: center;
+}
+.input-group{
+  margin-left: 0.5pc;
+}
+
+/* Navbar section*/
+.navbar {
+  padding: 0.2% 6%;
+  border-bottom: 0.0625rem solid #cfd9e6;
+
+}
+#badgeRec{
+  background-color: #318fb5;
+  
+}
+#badgeStep{
+  color: #005086;
+  background-color:#005086;
+}
+.header-recipe{
+  margin: 1pc;
+  padding: 0.7pc;
+  background: #3f444a;
+  background-color: #b0cac7;
+  text-decoration-color: #cfd9e6;
+} 
+
+.form-reipeadder{
+  text-align: center;
+  margin-left: 35pc;
+  margin-right:35pc;
+  margin-top: 15pc;
+  margin-bottom: 20pc;
+  align-self: center;
+  border: solid;
+  padding: 5pc;
+  border-color: lightgrey;
+  background-color: white;
+  border-radius: 3.5pc;
+ 
+
+
+  
+}
+ul{
+  list-style-type: none;
+}
+
+.h3-recipeherade{
+  color:white;
+  
+  
+}
+.badgerecipe{
+  
+  margin: 10;
+}
+.h5-steps{
+
+margin: 0.8pc;
+}
+.icon-cross{
+  margin-left: 8pc;
+}
+.container-recipe{
+  padding: 0.3pc;
+  margin-top: 0.8pc;
+  border-radius: .2pc;
+  background-color: #810000;
+  border-color: #810000;
+}
+.checked {
+  color: royalblue;
+}
+.form-rowRecipe{
+  margin-top: 0.8pc;
+}
+
+.submitButtonR{
+  margin-top: 3pc;
+ 
+  padding: 0.5pc;
+}
+
+
+  .col-recipeform{
+    padding-left: 10pc;
+    padding-right: 10pc;
+  }
+
+.nav-logo {
+  width: 8rem;
+  height: 8rem;
+}
+html,
+body {
+
+ background-image: url("images/food.jpg");
+ background-color: #cccccc;
+
+  height: 100%;
+  margin-top: 0.5pc;
+ 
+}
+.recipeTitle{
+  margin-top: 8pc;
+  margin-left: 3pc;
+  
+}
+.favbutton{
+    margin-top: 1pc;
+    margin-left: 3pc;
+}
+.recipeRating{
+  margin-left: 4pc;
+}
+
+.food-image{
+  margin-left: 4pc;
+}
+
+
+/* body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+} */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.active-button{
+    background-color: #32c5d2;
+}
+.submitButton{
+    align-self: flex-end;
+    margin-bottom: 2pc;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.nav-item {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.nav-link {
+  color: #3a3f45 !important;
+}
+
+.nav-link:hover {
+  color: #32c5d2 !important;
+  transition: color 80ms linear;
+}
+
+.nav-btn {
+  border: 0.0625rem solid rgba(47, 53, 59, 0.4);
+  color: #2f353b;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 1.25rem 1rem 1rem 1rem;
+  padding: 0.1875rem 0.9375rem 0.125rem 0.9375rem;
+  border-radius: 25rem;
+}
+
+.nav-btn:hover{
+  background-color: #2f353b!important;
+  color: #fff!important;
+}
+
+.nav-btn:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.nav-btn i {
+  padding: 0.1875rem 0.3125rem;
+}
+
+.nav-hr{
+  border: none;
+  width: 100%;
+  height: 0.005rem;
+  background-color: #cfd9e6;
+}
+
+/* MODAL Login/Register */
+.modal{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
+
+body.modal-open div.modal-backdrop {
+    z-index: 0;
+}
+
+.modal-body{
+  padding: 40px;
+  color: #5c6873;
+}
+
+.modal-c-tabs ul{
+  width: fit-content;
+  margin: auto;
+}
+
+.modal-c-tabs .nav-item{
+  margin: auto;
+  padding: 0.5rem 1rem;
+}
+
+hr{
+  display: none;
+}
+
+.md-form{
+  margin: 20px!important;
+}
+
+.log-sign-btn button{
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #32c5d2;
+  border: none;
+}
+
+.modal a{
+  color: #32c5d2;
+}
+
+.modal-footer button{
+  color: #5c6873;
+  border-color: #5c6873;
+}
+
+.modal-footer button:hover{
+  color: #fff;
+  background-color: #5c6873;
+  border-color: #5c6873;
+}
+
+.passwd-pattern{
+  color:  #DB6C79;
+}
+
+
+/* Responsive Design Media Queries MOSTLY For INDEX.HTML*/
+
+@media only screen and (max-width: 1200px) {
+  .container-fluid{
+    padding: 3% 2.25%;
+  }
+
+}
+
+@media only screen and (max-width: 991px){
+
+  .modal-c-tabs .nav-item a{
+      padding: 0.5rem;
+    }
+
+    .cta-col-1{
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+
+    .nav-item{
+      padding: 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .nav-item1{
+      padding-top: 1rem;
+    }
+
+    .nav-btn{
+      width: 50%;
+      margin-left: 22vw;
+    }
+
+}
+
+
+/* Cards */
+
+.withoutSearch{
+  padding: 90px;
+  text-align: center;
+}
+
+.recipeCard{
+  padding: 3% 2%;
+  margin: 0.1rem;
+}
+
+/* CTA Section */
+.cta {
+  color: #eeeeee;
+  background-color: #31383c;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  padding-bottom: 0.3125rem;
+}
+
+.cta-col-1{
+  display: inline-block;
+}
+
+.cta-col-1 img {
+  width: 9.77rem;
+  height: 5.69rem;
+}
+
+.cta-col-1 p {
+  margin-top: 1rem;
+}
+
+.paraInFooter {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+
+.icons{
+  padding: 0% 1%;
+}
+
+.icons:hover{
+  color: #32c5d2;
+}
+
+
