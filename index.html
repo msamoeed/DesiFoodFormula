@@ -203,10 +203,18 @@
         <button type="button" id="ing" class="btn btn-dark ing1">Ice</button>
       </div>
       <div class="col-lg-4 col-md-6" id="ingredientsAdded">
-        <h3>Ingredients</h3>
-        <br>
         <input type="text" class="form-control" id="searchByName" placeholder="Recipe Name"><i
           class="fas fa-search" id="searchIcon"></i>
+        <br>
+        <h3>Ingredients</h3>
+        <div class="input-group mb-2" id="smth">
+          <input type="text" class="form-control" placeholder="Add an ingredient"
+              aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingred">
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" id="addrecipebutton1" type="button">+ </button>
+              <button class="btn btn-outline-secondary" id="removerecipebutton1" type="button">-</button>
+          </div>
+      </div>
           <div id="searchIng">
             <button type="button" id="clear" class="btn btn-outline-dark clear1">Clear</button>
           </div>
@@ -271,6 +279,11 @@
       </div>
     </div>
   </section>
+
+  <!-- Show more button -->
+  <div class="showMore" id="showMore1"> 
+    <button type="button" class="btn btn-light">Show More <i class="fa fa-chevron-down iconss" aria-hidden="true"></i></button>
+  </div>
 
   <!--FOOTER -->
   <footer class="white-section" id="footer">
