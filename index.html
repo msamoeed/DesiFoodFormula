@@ -13,16 +13,6 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <!-- Bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
   <!-- Custom CSS (styles.css) -->
   <link rel="stylesheet" href="styles.css">
   <!-- AOS Library CSS -->
@@ -36,7 +26,7 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <a class="navbar-brand" href="index.html"> <img class="nav-logo" src="images/logo.png" alt="logo" width="50px"> </a>
     <h3> DesiFoodFormula</h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -45,14 +35,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-
         <li class="nav-item nav-item1">
-          <p class="searching" id="searchRecipe">Search <i class="fas fa-search"></i><span
-              class="sr-only">(current)</span></p>
-        </li>
-
-        <li class="nav-item nav-item1">
-          <a class="nav-link" href="#footer">Contact<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="">Contact<span class="sr-only">(current)</span></a>
         </li>
 
         <li class="nav-item">
@@ -147,8 +131,7 @@
 
 
                         <div class="text-center form-sm mt-2 log-sign-btn">
-                          <button form="modalLRForm" type="submit" class="btn btn-info" class="btn btn-info">Sign
-                            up</button>
+                          <button form="modalLRForm" type="submit" class="btn btn-info" class="btn btn-info">Sign up</button>
                         </div>
 
                       </div>
@@ -172,143 +155,102 @@
       </ul>
     </div>
   </nav>
-
+  
 
   <!-- Main Body -->
-  <section class="searchByIngredients">
-    <div class="row">
-      <div class="col-lg-8">
-        <h3 id="category">Fruits</h3>
-        <button type="button" id="ing" class="btn btn-dark ing1">Apple</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Banana</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Strawberry</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
-        <h3 id="category">Vegetables</h3>
-        <button type="button" id="ing" class="btn btn-dark ing1">Zuchini</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Potato</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Onion</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Okra</button>
-        <h3 id="category">Pantry</h3>
-        <button type="button" id="ing" class="btn btn-dark ing1">Daal</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Spaghetti</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Macaroni</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Oats</button>
-        <h3 id="category">Frozen</h3>
-        <button type="button" id="ing" class="btn btn-dark ing1">Chicken</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Beef</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Mutton</button>
-        <button type="button" id="ing" class="btn btn-dark ing1">Ice</button>
-      </div>
-      <div class="col-lg-4 col-md-6" id="ingredientsAdded">
-        <input type="text" class="form-control" id="searchByName" placeholder="Recipe Name"><i
-          class="fas fa-search" id="searchIcon"></i>
-        <br>
-        <h3>Ingredients</h3>
-        <div class="input-group mb-2" id="smth">
-          <input type="text" class="form-control" placeholder="Add an ingredient"
-              aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingred">
-          <div class="input-group-append">
-              <button class="btn btn-outline-secondary" id="addrecipebutton1" type="button">+ </button>
-              <button class="btn btn-outline-secondary" id="removerecipebutton1" type="button">-</button>
-          </div>
-      </div>
-          <div id="searchIng">
-            <button type="button" id="clear" class="btn btn-outline-dark clear1">Clear</button>
-          </div>
-        <div id="searchIng">
-          <button type="button" id="searchIt" class="btn btn-light">Search</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="withoutSearch">
     <div id="recipeCards" class="row">
 
-      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
         <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
 
-      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
         <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
 
-      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
         <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
 
-      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" style="width: 18rem;">
         <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-
-      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
-        <img class="card-img-top" src="images/food.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+      
     </div>
   </section>
 
-  <!-- Show more button -->
-  <div class="showMore" id="showMore1"> 
-    <button type="button" class="btn btn-light">Show More <i class="fa fa-chevron-down iconss" aria-hidden="true"></i></button>
-  </div>
+
+
 
   <!--FOOTER -->
   <footer class="white-section" id="footer">
-    <div class="cta container-fluid">
+  <div class="cta container-fluid">
 
       <div class="cta-col-1">
         <img src="images/logo.png" alt="logo image">
         <p>A Nevada Based Corporation</p>
-        <p>support@desiFoodFormula.com</p>
-        <div><i class="fab fa-facebook icons"></i> <i class="fab fa-twitter icons"></i> <i
-            class="fab fa-instagram icons"></i></div>
+        <p>support@pourlog.com</p>
+        <div class="icons"><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i></div>
       </div>
-      <p class="paraInFooter">© 2020 Copyright: desiFoodFormula.com</p>
-    </div>
-  </footer>
+
+      <div class="col-lg-5 cta-column cta-col-3">
+        <div class="cta3-section">
+          <h4 class="sub-heading">Explore</h4>
+          <hr class="blue-hr">
+          <a href="#features">Features</a>
+          <a href="#applications">Applications</a>
+          <a href="#pricing">Pricing Plan</a>
+        </div>
+        <div class="cta3-section">
+          <h4 class="sub-heading">Navigate</h4>
+          <hr class="blue-hr">
+          <a href="products.html">Products</a>
+          <a href="resources.html">Resources</a>
+          <a href="#company">Company</a>
+        </div>
+      </div> 
+    <p class="paraInFooter">© 2020 Copyright: Pourlog.com</p>
+  </div>
+</footer> 
 
 
 
   <!-- Jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-1.8.0.min.js%22%3E</script> -->
-
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
   <!-- Custom JS (index.js) -->
   <script src="index.js" charset="utf-8"></script>
-
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
   <!-- AOS Library JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
