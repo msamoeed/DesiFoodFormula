@@ -12,18 +12,18 @@ html {
 
 /* Navbar section*/
 .navbar {
-  padding: 0.2% 6%;
+  padding: 1% 5%;
   border-bottom: 0.0625rem solid #cfd9e6;
 }
 
 .nav-logo {
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 5rem;
 }
-html,
-body {
-  padding-top:50px;
-  height: 100%;
+
+html, body {
+  padding-top: 6%;
+  /* height: 100%; */
 }
 
 /* body {
