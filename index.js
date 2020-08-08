@@ -96,25 +96,31 @@ $(".navbar-toggler").click(function () {
   $(".phone-container, .screenshot-container, .overlay-container").toggleClass("navbar-expand-margin");
 })
 
-// Make the height of both carousel items equal
-// $(document).ready(function () {
-//   if ($(".carousel-1").height() > $(".carousel-2").height()) {
-//     var carouselItem1Height = $(".carousel-1").height()
-//     $(".carousel-2").height(carouselItem1Height);
-//   }
-//   else if ($(".carousel-2").height() > $(".carousel-1").height()) {
-//     var carouselItem2Height = $(".carousel-2").height()
-//     $(".carousel-1").height(carouselItem2Height);
-//   }
-// })
-//
-// $(window).resize(function () {
-//   if ($(".carousel-1").height() > $(".carousel-2").height()) {
-//     var carouselItem1Height = $(".carousel-1").height()
-//     $(".carousel-2").height(carouselItem1Height);
-//   }
-//   else if ($(".carousel-2").height() > $(".carousel-1").height()) {
-//     var carouselItem2Height = $(".carousel-2").height()
-//     $(".carousel-1").height(carouselItem2Height);
-//   }
-// })
+$(".searchByIngredients").slideUp();
+
+
+//Search Recipes Section
+
+//To slide toggle rearch recipes function
+$("#searchRecipe").click(function(){
+  // $(".withoutSearch").slideToggle();
+  $(".searchByIngredients").slideToggle();
+});
+
+var ingredientsAdded = [];
+
+$(".ing1").click(function(){
+  var ingredient = $(this).html();
+  ingredientsAdded.push(ingredient);
+  console.log(ingredientsAdded);
+  $('#searchIcon').after('<button type="button" id="ing" class="btn btn-dark ingredient-remove">'+ingredient+'</button>');
+});
+
+
+$(".clear1").click(function(){
+  $(".ingredient-remove").remove();
+  ingredientsAdded = [];
+  console.log(ingredientsAdded);
+});
+
+

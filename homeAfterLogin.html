@@ -59,115 +59,16 @@
           <a class="nav-link" href="#company">All Recipes</a>
         </li>
         <li>
-          <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal" data-target="#modalLRForm"><i
-              class="fas fa-sign-in-alt"></i> Login</a>
-        </li>
-        <li>
-          <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered cascading-modal" role="document">
-              <!--Content-->
-              <div class="modal-content">
-
-                <!--Modal cascading tabs-->
-                <div class="modal-c-tabs">
-
-                  <!-- Nav tabs -->
-                  <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
-                          class="fas fa-user mr-1"></i>
-                        Login</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
-                          class="fas fa-user-plus mr-1"></i>
-                        Sign Up</a>
-                    </li>
-                  </ul>
-
-                  <!-- Tab panels -->
-                  <div class="tab-content">
-                    <!--Panel 7-->
-                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-
-                      <!--Body-->
-                      <div class="modal-body mb-1">
-                        <div class="md-form form-sm mb-5">
-                          <label data-error="wrong" data-success="right" for="modalLRInput10">Email</label>
-                          <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
-                        </div>
-
-                        <div class="md-form form-sm mb-4">
-                          <label data-error="wrong" data-success="right" for="modalLRInput11">Password</label>
-                          <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
-                        </div>
-                        <div class="text-center mt-2 log-sign-btn">
-                          <button form="modalLRForm" type="submit" class="btn btn-info">LogIn</i></button>
-                        </div>
-                        <div class="text-center mt-2">
-                          <a href="#">Forgot Password ?</a>
-                        </div>
-                      </div>
-                      <!--Footer-->
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-info waves-effect ml-auto"
-                          data-dismiss="modal">Close</button>
-                      </div>
-
-                    </div>
-
-                    <!--Panel 8-->
-                    <div class="tab-pane fade" id="panel8" role="tabpanel">
-
-                      <!--Body-->
-                      <div class="modal-body">
-
-                        <div class="md-form form-sm mb-5">
-                          <label data-error="wrong" data-success="right" for="modalLRInput13">Username</label>
-                          <input type="text" id="modalLRInput13" class="form-control form-control-sm validate">
-                        </div>
-
-                        <div class="md-form form-sm mb-5">
-                          <label data-error="wrong" data-success="right" for="modalLRInput12">Email</label>
-                          <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
-                        </div>
-
-                        <div class="md-form form-sm mb-5">
-                          <label data-error="wrong" data-success="right" for="modalLRInput13">Password</label>
-                          <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
-                          <p class="passwd-pattern">Password should be 7 characters long</p>
-                        </div>
-
-                        <div class="md-form form-sm mb-5">
-                          <label data-error="wrong" data-success="right" for="modalLRInput13">Repeat Password</label>
-                          <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
-                          <p class="passwd-pattern">Password should be 7 characters long</p>
-                        </div>
-
-
-                        <div class="text-center form-sm mt-2 log-sign-btn">
-                          <button form="modalLRForm" type="submit" class="btn btn-info" class="btn btn-info">Sign
-                            up</button>
-                        </div>
-
-                      </div>
-                      <!--Footer-->
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-info waves-effect ml-auto"
-                          data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                    <!--/.Panel 8-->
-                  </div>
-
-                </div>
-              </div>
-              <!--/.Content-->
+          <div class="btn-group profile" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Khadija Khan
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item drop" href="#"><i class="fa fa-cutlery icons" aria-hidden="true"></i> My Recipes</a>
+              <a class="dropdown-item drop" href="#"><i class="fa fa-heart icons" aria-hidden="true"></i> Favourites</a>
+              <a class="dropdown-item drop" href="#"><i class="fa fa-sign-out icons" aria-hidden="true"></i> Logout</a>
             </div>
           </div>
-          <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal" data-target="#modalLRForm"><i
-              class="fas fa-user-plus" aria-hidden="true"></i> Sign Up</a>
         </li>
       </ul>
     </div>

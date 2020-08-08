@@ -14,7 +14,6 @@ html {
 .navbar {
   padding: 1% 5%;
   border-bottom: 0.0625rem solid #cfd9e6;
-
 }
 
 .nav-logo {
@@ -23,7 +22,7 @@ html {
 }
 
 html, body {
-  padding-top: 3%;
+  padding-top: 6%;
   /* height: 100%; */
 }
 
@@ -85,6 +84,25 @@ html, body {
 .nav-link:hover {
   color: #32c5d2 !important;
   transition: color 80ms linear;
+}
+
+.searching{
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.searching:hover{
+  color: #32c5d2;
+}
+
+.drop:hover{
+  background-color: #5c6873;
+  color: white;
+}
+
+.profile{
+  display: block;
+  padding: 0.7rem 0.5rem 1rem 1rem;
 }
 
 .nav-btn {
@@ -222,16 +240,56 @@ hr{
 }
 
 
-/* Cards */
+/* Without Search Section */
 
 .withoutSearch{
-  padding: 90px;
+  padding: 100px;
+  padding-top: 1%;
   text-align: center;
 }
 
 .recipeCard{
   padding: 3% 2%;
-  margin: 0.1rem;
+  /* margin: 0.5rem; */
+}
+
+/* Search Section */
+.searchByIngredients{
+  padding: 100px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#category{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#ingredientsAdded{
+  color: white;
+  background-color: dimgray;
+  border-radius: 1rem;
+  padding: 50px;
+}
+
+#searchByName{
+  display: inline;
+  width: 250px;
+  margin-right: 1rem;
+}
+
+#searchIt{
+  margin: auto;
+  width: 50%;
+}
+
+#searchIng{
+  padding: 20px;
+  text-align: center;
+}
+
+.ingredient-remove{
+  margin: 1rem;
 }
 
 /* CTA Section */
@@ -264,7 +322,7 @@ hr{
 
 
 .icons{
-  padding: 0% 1%;
+  padding: 0% 5%;
 }
 
 .icons:hover{
