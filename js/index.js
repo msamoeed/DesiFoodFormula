@@ -108,50 +108,6 @@ $("#removerecipebutton1").click(function(){
 });
 
 
-//Moeed's work
-
-var data = [];
-var steps = [];
-
-$("#addrecipebutton").click(function() {
- 
-    var ingr = $("#ingred").val();
-    data.push(ingr);
- 
-    var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc; background-color :"#318fb5" id="badgeRec" class="btn btn-primary  badgerecipe">' + ingr ;
-
-  var element =   $('.list-group').after(htmlString);
-   
-
-});
-
-$("#removerecipebutton").click(function(){
-
-  $('#badgeRec').remove();
-  data.pop();
-});
-
-
-$("#addstepsbutton").click(function() {
- 
-  var ingr = $("#steps").val();
-  steps.push(ingr);
-  
-  var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc" id="badgeStep" class="btn btn-primary  badgerecipe">' + ingr ;
-
-var element =   $('#steps2List').append("<p id='badgeStep' >" + ingr + "</p>");
-steps.push(ingr);
- 
-
-});
-
-
-$("#removestepsbutton").click(function(){
-
-  $('#badgeStep').remove();
- steps.pop();
-});
-
 //FIREBASE AUTH
 const firebaseConfig = {
   apiKey: "AIzaSyCJqiGG0RkCOgLjW_CVzd4D4ADxNOf-hrQ",
@@ -234,14 +190,11 @@ function SignIn() {
 
     user = firebase.auth().currentUser;
     var uid = user.uid;
-    signedInUser = userCreds.user.uid;
 
-
+    
     localStorage.setItem("uid", uid);
 
-
-
-    alert(vOneLS);
+   
     docRef.get().then(function (doc) {
       if (doc.exists) {
         var userData = doc.data();
@@ -297,7 +250,7 @@ db.collection("menu").limit(15)
     querySnapshot.forEach(function (doc) {
       // doc.data() is never undefined for query doc snapshots
 
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6"><img class="card-img-top src= "images/food.jpg"  alt="Card image cap" ><div class="card-body"><h5 class="card-title"> ' + doc.data().name + '   </h5><p class="card-text"> ' + doc.data().description + '</p><a href="#" class="btn btn-primary" id="checkButton" >Check</a></div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6"><img class="card-img-top src= "css/images/food.jpg"  alt="Card image cap" ><div class="card-body"><h5 class="card-title"> ' + doc.data().name + '   </h5><p class="card-text"> ' + doc.data().description + '</p><a href="#" class="btn btn-primary" id="checkButton" >Check</a></div></div> '
       $("#recipeCards").append(htmlString);
 
     });
@@ -312,7 +265,10 @@ $('.checkButton').on('click', function (e) {
   disconnectFunction(e.target);
 });
 
-
+$(document).on("click",".checkButton",function() {
+  
+  alert('asdas');
+      });
 
 
 
