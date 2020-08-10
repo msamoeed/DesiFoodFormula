@@ -293,6 +293,10 @@ hr{
   margin: 1rem;
 }
 
+#addrecipebutton1, #removerecipebutton1{
+  color: white;
+}
+
 .showMore{
   text-align: center;
   padding-bottom: 3%;

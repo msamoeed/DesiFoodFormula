@@ -70,7 +70,7 @@ $(".navbar-toggler").click(function () {
 //Search Recipes Section
 
 //To slide toggle rearch recipes function
-//$(".searchByIngredients").slideUp();
+$(".searchByIngredients").slideUp();
 $("#searchRecipe").click(function(){
   window.scroll(0, 0);
   $(".searchByIngredients").slideToggle();

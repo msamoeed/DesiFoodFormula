@@ -1,0 +1,277 @@
+
+#bg{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  
+    background-size: contain;
+  }
+  
+  /* Navbar section*/
+  .navbar {
+      padding: 1% 5%;
+      border-bottom: 0.0625rem solid #cfd9e6;
+      color: white;
+    }
+    
+    .nav-logo {
+      width: 9rem;
+      height: 5rem;
+    }
+    
+    html, body {
+      padding-top: 6%;
+      /* height: 100%; */
+    }
+    
+    /* body {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #f5f5f5;
+    } */
+    
+    .form-signin {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+    }
+    .form-signin .checkbox {
+      font-weight: 400;
+    }
+    .form-signin .form-control {
+      position: relative;
+      box-sizing: border-box;
+      height: auto;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .form-signin .form-control:focus {
+      z-index: 2;
+    }
+    .form-signin input[type="email"] {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .form-signin input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    
+    
+    .nav-item {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.0625rem;
+      text-transform: uppercase;
+      padding: 1rem;
+    }
+    
+    .nav-link {
+      color: #3a3f45 !important;
+    }
+    
+    .nav-link:hover {
+      color: #32c5d2 !important;
+      transition: color 80ms linear;
+    }
+    
+    .searching{
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+    
+    .searching:hover{
+      color: #32c5d2;
+    }
+    
+    .drop:hover{
+      background-color: #5c6873;
+      color: white;
+    }
+    
+    .profile{
+      display: block;
+      padding: 0.7rem 0.5rem 1rem 1rem;
+    }
+    
+    .nav-btn {
+      border: 0.0625rem solid rgba(47, 53, 59, 0.4);
+      color: #2f353b;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin: 1.25rem 1rem 1rem 1rem;
+      padding: 0.1875rem 0.9375rem 0.125rem 0.9375rem;
+      border-radius: 25rem;
+    }
+    
+    .nav-btn:hover{
+      background-color: #2f353b!important;
+      color: #fff!important;
+    }
+    
+    .nav-btn:focus {
+      outline: none;
+      box-shadow: none !important;
+    }
+    
+    .nav-btn i {
+      padding: 0.1875rem 0.3125rem;
+    }
+    
+    .nav-hr{
+      border: none;
+      width: 100%;
+      height: 0.005rem;
+      background-color: #cfd9e6;
+    }
+    
+    /* MODAL Login/Register */
+    .modal{
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 300;
+    }
+    
+    body.modal-open div.modal-backdrop {
+        z-index: 0;
+    }
+    
+    .modal-body{
+      padding: 40px;
+      color: #5c6873;
+    }
+    
+    .modal-c-tabs ul{
+      width: fit-content;
+      margin: auto;
+    }
+    
+    .modal-c-tabs .nav-item{
+      margin: auto;
+      padding: 0.5rem 1rem;
+    }
+    
+    hr{
+      display: none;
+    }
+    
+    .md-form{
+      margin: 20px!important;
+    }
+    
+    .log-sign-btn button{
+      border-radius: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: #32c5d2;
+      border: none;
+    }
+    
+    .modal a{
+      color: #32c5d2;
+    }
+    
+    .modal-footer button{
+      color: #5c6873;
+      border-color: #5c6873;
+    }
+    
+    .modal-footer button:hover{
+      color: #fff;
+      background-color: #5c6873;
+      border-color: #5c6873;
+    }
+    
+    .passwd-pattern{
+      color:  #DB6C79;
+    }
+    
+    
+    /* Responsive Design Media Queries MOSTLY For INDEX.HTML*/
+    
+    @media only screen and (max-width: 1200px) {
+      .container-fluid{
+        padding: 3% 2.25%;
+      }
+    
+    }
+    
+    @media only screen and (max-width: 991px){
+    
+      .modal-c-tabs .nav-item a{
+          padding: 0.5rem;
+        }
+    
+        .cta-col-1{
+          text-align: center;
+          padding-top: 1rem;
+        }
+    
+    
+        .nav-item{
+          padding: 0;
+          font-family: 'Roboto Condensed', sans-serif;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: center;
+        }
+    
+        .nav-item1{
+          padding-top: 1rem;
+        }
+    
+        .nav-btn{
+          width: 50%;
+          margin-left: 22vw;
+        }
+    
+    }
+  
+  
+  #options{
+      position: relative;
+      padding: 1% 15%;
+      padding-top: 0%;
+  }
+  
+  .option1{
+      width: 500px;
+      background-color: white;
+      background:rgba(255,255,255, 0.6);
+      text-align: center;
+      margin: 2rem;
+      border-radius: 2%;
+      padding: 2% 3%;
+  }
+
+  .option1:hover{
+    background:rgba(255,255,255, 0.8);
+  }
+
+  #images{
+      height: 150px;
+      width: 150px;
+      margin-bottom: 3rem;
+      margin-top: 3rem;
+  }
+
+#text{
+    margin-bottom: 3rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- saved from url=(0114)file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>DesiFoodFormula</title>
+  <!-- Google Fonts -->
+  <link href="./DesiFoodFormula_files/css2" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/images/favicons.png">
+  <!-- Font-awesome  -->
+  <script src="./DesiFoodFormula_files/63ffb9f775.js" crossorigin="anonymous"></script><link href="./DesiFoodFormula_files/free-v4-shims.min.css" media="all" rel="stylesheet"><link href="./DesiFoodFormula_files/free-v4-font-face.min.css" media="all" rel="stylesheet"><link href="./DesiFoodFormula_files/free.min.css" media="all" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./DesiFoodFormula_files/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Bootstrap -->
+  <script src="./DesiFoodFormula_files/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="./DesiFoodFormula_files/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="./DesiFoodFormula_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Custom CSS (styles.css) -->
+  <link rel="stylesheet" href="./DesiFoodFormula_files/styles.css">
+  <!-- AOS Library CSS -->
+  <link href="./DesiFoodFormula_files/aos.css" rel="stylesheet">
+  <!-- Tags for responsiveness -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white nav-halfscrolled">
+    <a class="navbar-brand" href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html"> <img class="nav-logo" src="./DesiFoodFormula_files/logo.png" alt="logo" width="50px"> </a>
+    <h3> DesiFoodFormula</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item nav-item1">
+          <p class="searching" id="searchRecipe">Search <i class="fas fa-search" aria-hidden="true"></i><span class="sr-only">(current)</span></p>
+        </li>
+
+        <li class="nav-item nav-item1">
+          <a class="nav-link" href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#footer">Contact<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#company">All Recipes</a>
+        </li>
+        <li>
+          <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal" data-target="#modalLRForm"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Login</a>
+        </li>
+        <li>
+          <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered cascading-modal" role="document">
+              <!--Content-->
+              <div class="modal-content">
+
+                <!--Modal cascading tabs-->
+                <div class="modal-c-tabs">
+
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#panel7" role="tab"><i class="fas fa-user mr-1" aria-hidden="true"></i>
+                        Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#panel8" role="tab"><i class="fas fa-user-plus mr-1" aria-hidden="true"></i>
+                        Sign Up</a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panels -->
+                  <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                      <!--Body-->
+                      <div class="modal-body mb-1">
+                        <div class="md-form form-sm mb-5">
+                          <label data-error="wrong" data-success="right" for="modalLRInput10">Email</label>
+                          <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                        </div>
+
+                        <div class="md-form form-sm mb-4">
+                          <label data-error="wrong" data-success="right" for="modalLRInput11">Password</label>
+                          <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                        </div>
+                        <div class="text-center mt-2 log-sign-btn">
+                          <button form="modalLRForm" type="submit" class="btn btn-info">LogIn</button>
+                        </div>
+                        <div class="text-center mt-2">
+                          <a href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#">Forgot Password ?</a>
+                        </div>
+                      </div>
+                      <!--Footer-->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                      <!--Body-->
+                      <div class="modal-body">
+
+                        <div class="md-form form-sm mb-5">
+                          <label data-error="wrong" data-success="right" for="modalLRInput13">Username</label>
+                          <input type="text" id="modalLRInput13" class="form-control form-control-sm validate">
+                        </div>
+
+                        <div class="md-form form-sm mb-5">
+                          <label data-error="wrong" data-success="right" for="modalLRInput12">Email</label>
+                          <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                        </div>
+
+                        <div class="md-form form-sm mb-5">
+                          <label data-error="wrong" data-success="right" for="modalLRInput13">Password</label>
+                          <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                          <p class="passwd-pattern">Password should be 7 characters long</p>
+                        </div>
+
+                        <div class="md-form form-sm mb-5">
+                          <label data-error="wrong" data-success="right" for="modalLRInput13">Repeat Password</label>
+                          <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                          <p class="passwd-pattern">Password should be 7 characters long</p>
+                        </div>
+
+
+                        <div class="text-center form-sm mt-2 log-sign-btn">
+                          <button form="modalLRForm" type="submit" class="btn btn-info">Sign
+                            up</button>
+                        </div>
+
+                      </div>
+                      <!--Footer-->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    <!--/.Panel 8-->
+                  </div>
+
+                </div>
+              </div>
+              <!--/.Content-->
+            </div>
+          </div>
+          <a type="button" class="btn btn-outline-dark nav-btn" data-toggle="modal" data-target="#modalLRForm"><i class="fas fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Main Body -->
+  <section class="searchByIngredients" style="display: none;">
+    <div class="row">
+      <div class="col-lg-8">
+        <h3 id="category">Fruits</h3>
+        <button type="button" id="ing" class="btn btn-dark ing1">Apple</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Banana</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Strawberry</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
+        <h3 id="category">Vegetables</h3>
+        <button type="button" id="ing" class="btn btn-dark ing1">Zuchini</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Potato</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Onion</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Okra</button>
+        <h3 id="category">Pantry</h3>
+        <button type="button" id="ing" class="btn btn-dark ing1">Daal</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Spaghetti</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Macaroni</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Oats</button>
+        <h3 id="category">Frozen</h3>
+        <button type="button" id="ing" class="btn btn-dark ing1">Chicken</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Beef</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Mutton</button>
+        <button type="button" id="ing" class="btn btn-dark ing1">Ice</button>
+      </div>
+      <div class="col-lg-4 col-md-6" id="ingredientsAdded">
+        <input type="text" class="form-control" id="searchByName" placeholder="Recipe Name"><i class="fas fa-search" id="searchIcon" aria-hidden="true"></i>
+        <br>
+        <h3>Ingredients</h3>
+        <div class="input-group mb-2" id="smth">
+          <input type="text" class="form-control" placeholder="Add an ingredient" aria-label="Recipient&#39;s username" aria-describedby="basic-addon2" id="ingred">
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" id="addrecipebutton1" type="button">+ </button>
+              <button class="btn btn-outline-secondary" id="removerecipebutton1" type="button">-</button>
+          </div>
+      </div>
+          <div id="searchIng">
+            <button type="button" id="clear" class="btn btn-outline-dark clear1">Clear</button>
+          </div>
+        <div id="searchIng">
+          <button type="button" id="searchIt" class="btn btn-light">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="withoutSearch">
+    <div id="recipeCards" class="row">
+
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+        <img class="card-img-top" src="./DesiFoodFormula_files/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+        <img class="card-img-top" src="./DesiFoodFormula_files/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+        <img class="card-img-top" src="./DesiFoodFormula_files/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+        <img class="card-img-top" src="./DesiFoodFormula_files/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card recipeCard col-lg-3 col-md-4 col-sm-6">
+        <img class="card-img-top" src="./DesiFoodFormula_files/food.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="file:///Volumes/HDD/Assignments%20and%20other%20work/Fifth%20Semester/Web%20Engineering/DesiFoodFormula/index.html#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Show more button -->
+  <div class="showMore" id="showMore1"> 
+    <button type="button" class="btn btn-light">Show More <i class="fa fa-chevron-down iconss" aria-hidden="true"></i></button>
+  </div>
+
+  <!--FOOTER -->
+  <footer class="white-section" id="footer">
+    <div class="cta container-fluid">
+
+      <div class="cta-col-1">
+        <img src="./DesiFoodFormula_files/logo.png" alt="logo image">
+        <p>A Nevada Based Corporation</p>
+        <p>support@desiFoodFormula.com</p>
+        <div><i class="fab fa-facebook icons" aria-hidden="true"></i> <i class="fab fa-twitter icons" aria-hidden="true"></i> <i class="fab fa-instagram icons" aria-hidden="true"></i></div>
+      </div>
+      <p class="paraInFooter">© 2020 Copyright: desiFoodFormula.com</p>
+    </div>
+  </footer>
+
+
+
+  <!-- Jquery -->
+  <script src="./DesiFoodFormula_files/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.8.0.min.js%22%3E</script> -->
+
+  <!-- Custom JS (index.js) -->
+  <script src="./DesiFoodFormula_files/index.js" charset="utf-8"></script>
+
+  <!-- AOS Library JS -->
+  <script src="./DesiFoodFormula_files/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+</body></html>

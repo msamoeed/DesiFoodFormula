@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>DesiFoodFormula</title>
+   <!-- Firebase Scripts -->
+   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="images/favicons.png">
   <!-- Font-awesome  -->
   <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
   <!-- Bootstrap CSS -->
@@ -24,7 +25,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <!-- Custom CSS (styles.css) -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <!-- AOS Library CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Tags for responsiveness -->
@@ -66,6 +67,7 @@
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
               <a class="dropdown-item drop" href="#"><i class="fa fa-cutlery icons" aria-hidden="true"></i> My Recipes</a>
               <a class="dropdown-item drop" href="#"><i class="fa fa-heart icons" aria-hidden="true"></i> Favourites</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item drop" href="#"><i class="fa fa-sign-out icons" aria-hidden="true"></i> Logout</a>
             </div>
           </div>
@@ -104,10 +106,18 @@
         <button type="button" id="ing" class="btn btn-dark ing1">Ice</button>
       </div>
       <div class="col-lg-4 col-md-6" id="ingredientsAdded">
-        <h3>Ingredients</h3>
-        <br>
         <input type="text" class="form-control" id="searchByName" placeholder="Recipe Name"><i
           class="fas fa-search" id="searchIcon"></i>
+        <br>
+        <h3>Ingredients</h3>
+        <div class="input-group mb-2" id="smth">
+          <input type="text" class="form-control" placeholder="Add an ingredient"
+              aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingred">
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" id="addrecipebutton1" type="button">+ </button>
+              <button class="btn btn-outline-secondary" id="removerecipebutton1" type="button">-</button>
+          </div>
+      </div>
           <div id="searchIng">
             <button type="button" id="clear" class="btn btn-outline-dark clear1">Clear</button>
           </div>
@@ -195,7 +205,8 @@
   <!-- <script src="https://code.jquery.com/jquery-1.8.0.min.js%22%3E</script> -->
 
   <!-- Custom JS (index.js) -->
-  <script src="index.js" charset="utf-8"></script>
+  <script src="js/index.js" charset="utf-8"></script>
+  <script src="js/homeAfterLogin.js" charset="utf-8"></script>
 
   <!-- AOS Library JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

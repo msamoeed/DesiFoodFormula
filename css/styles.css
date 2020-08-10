@@ -1,7 +1,3 @@
-html,body{
-    overflow-x: hidden;
-}
-
 html {
  font-size: 100%;
 }
@@ -13,126 +9,22 @@ html {
   padding: 4% 5.5%;
   text-align: center;
 }
-.input-group{
-  margin-left: 0.5pc;
-}
 
 /* Navbar section*/
 .navbar {
-  padding: 0.2% 6%;
+  padding: 1% 5%;
   border-bottom: 0.0625rem solid #cfd9e6;
-
 }
-#badgeRec{
-  background-color: #318fb5;
-  
-}
-#badgeStep{
-  color: #005086;
-  background-color:#005086;
-}
-.header-recipe{
-  margin: 1pc;
-  padding: 0.7pc;
-  background: #3f444a;
-  background-color: #b0cac7;
-  text-decoration-color: #cfd9e6;
-} 
-
-.form-reipeadder{
-  text-align: center;
-  margin-left: 35pc;
-  margin-right:35pc;
-  margin-top: 15pc;
-  margin-bottom: 20pc;
-  align-self: center;
-  border: solid;
-  padding: 5pc;
-  border-color: lightgrey;
-  background-color: white;
-  border-radius: 3.5pc;
- 
-
-
-  
-}
-ul{
-  list-style-type: none;
-}
-
-.h3-recipeherade{
-  color:white;
-  
-  
-}
-.badgerecipe{
-  
-  margin: 10;
-}
-.h5-steps{
-
-margin: 0.8pc;
-}
-.icon-cross{
-  margin-left: 8pc;
-}
-.container-recipe{
-  padding: 0.3pc;
-  margin-top: 0.8pc;
-  border-radius: .2pc;
-  background-color: #810000;
-  border-color: #810000;
-}
-.checked {
-  color: royalblue;
-}
-.form-rowRecipe{
-  margin-top: 0.8pc;
-}
-
-.submitButtonR{
-  margin-top: 3pc;
- 
-  padding: 0.5pc;
-}
-
-
-  .col-recipeform{
-    padding-left: 10pc;
-    padding-right: 10pc;
-  }
 
 .nav-logo {
-  width: 8rem;
-  height: 8rem;
-}
-html,
-body {
-
- background-image: url("images/food.jpg");
- background-color: #cccccc;
-
-  height: 100%;
-  margin-top: 0.5pc;
- 
-}
-.recipeTitle{
-  margin-top: 8pc;
-  margin-left: 3pc;
-  
-}
-.favbutton{
-    margin-top: 1pc;
-    margin-left: 3pc;
-}
-.recipeRating{
-  margin-left: 4pc;
+  width: 9rem;
+  height: 5rem;
 }
 
-.food-image{
-  margin-left: 4pc;
+html, body {
+  padding-top: 6%;
+  /* height: 100%; */
 }
-
 
 /* body {
   display: -ms-flexbox;
@@ -159,13 +51,6 @@ body {
   height: auto;
   padding: 10px;
   font-size: 16px;
-}
-.active-button{
-    background-color: #32c5d2;
-}
-.submitButton{
-    align-self: flex-end;
-    margin-bottom: 2pc;
 }
 .form-signin .form-control:focus {
   z-index: 2;
@@ -199,6 +84,25 @@ body {
 .nav-link:hover {
   color: #32c5d2 !important;
   transition: color 80ms linear;
+}
+
+.searching{
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.searching:hover{
+  color: #32c5d2;
+}
+
+.drop:hover{
+  background-color: #5c6873;
+  color: white;
+}
+
+.profile{
+  display: block;
+  padding: 0.7rem 0.5rem 1rem 1rem;
 }
 
 .nav-btn {
@@ -336,17 +240,70 @@ hr{
 }
 
 
-/* Cards */
+/* Without Search Section */
 
 .withoutSearch{
-  padding: 90px;
+  padding: 100px;
+  padding-top: 1%;
   text-align: center;
 }
 
 .recipeCard{
   padding: 3% 2%;
-  margin: 0.1rem;
+  /* margin: 0.5rem; */
 }
+
+/* Search Section */
+.searchByIngredients{
+  padding: 100px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#category{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#ingredientsAdded{
+  color: white;
+  background-color: dimgray;
+  border-radius: 1rem;
+  padding: 50px;
+}
+
+#searchByName{
+  display: inline;
+  width: 250px;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+#searchIt{
+  margin: auto;
+  width: 50%;
+}
+
+#searchIng{
+  padding: 20px;
+  text-align: center;
+}
+
+.ingredient-remove{
+  margin: 1rem;
+}
+
+#addrecipebutton1, #removerecipebutton1{
+  color: white;
+}
+
+.showMore{
+  text-align: center;
+  padding-bottom: 3%;
+  width: 100%;
+}
+
+
 
 /* CTA Section */
 .cta {
@@ -378,11 +335,13 @@ hr{
 
 
 .icons{
-  padding: 0% 1%;
+  padding: 0% 5%;
 }
 
 .icons:hover{
   color: #32c5d2;
 }
+
+
 
 
