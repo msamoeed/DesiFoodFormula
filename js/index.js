@@ -230,17 +230,13 @@ function SignIn() {
   // [END authwithemail]
 }
 $("#logInButton").click(function () {
+
+  var pass = $("#modalLRInput11").val();
+  var pass = $("#modalLRInput11").val();
   SignIn();
 
   if (localStorage.getItem("uid") != null)
     window.location.href = 'homeAfterLogin.html';
-
-
-
-
-
-
-
 });
 
 
