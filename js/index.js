@@ -240,13 +240,12 @@ $("#logInButton").click(function () {
 });
 
 
-db.collection("menu").limit(15)
+db.collection("menu").limit(16)
   .get()
   .then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
       // doc.data() is never undefined for query doc snapshots
-
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6"><img class="card-img-top src= "css/images/food.jpg"  alt="Card image cap" ><div class="card-body"><h5 class="card-title"> ' + doc.data().name + '   </h5><p class="card-text"> ' + doc.data().description + '</p><a href="#" class="btn btn-primary" id="checkButton" >Check</a></div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6"><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'" alt="Card image cap" ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-primary checkButton"  id= "' + doc.data().id + '" >Check</a></div></div> '
       $("#recipeCards").append(htmlString);
 
     });
@@ -256,15 +255,24 @@ db.collection("menu").limit(15)
   });
 
 
-$('.checkButton').on('click', function (e) {
-  alert("asd");
-  disconnectFunction(e.target);
-});
+// $('#checkButton').on('click', function (e) {
+//   alert("asd");
+//   disconnectFunction(e.target);
+// });
 
 $(document).on("click",".checkButton",function() {
-  
-  alert('asdas');
+  var foodId = $(this).attr("id");
+       
+
+      localStorage.setItem("foodId", foodId);
+
+      if (localStorage.getItem("foodId") != null){
+        window.location.href = 'recipe.html';
+
+      }
+
       });
+
 
 
 
@@ -272,7 +280,10 @@ $(document).on("click",".checkButton",function() {
 
 
 
-
+  //First letter capital
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   
 
  

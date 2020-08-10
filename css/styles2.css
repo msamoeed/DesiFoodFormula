@@ -16,6 +16,13 @@ html {
 .input-group{
   margin-left: 0.5pc;
 }
+.step-block{
+  display: block;
+}
+
+.stepsOnRecipe{
+  margin-left: 3pc;
+}
 
 /* Navbar section*/
 .navbar {
