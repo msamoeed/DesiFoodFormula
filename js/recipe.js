@@ -19,7 +19,7 @@ var vOneLS = localStorage.getItem("foodId");
 
 
 
-db.collection("menu").where("id", "==", parseInt(vOneLS))
+db.collection("menu").where("id", "==", parseInt(vOneLS)).limit(1)
   .get()
   .then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
