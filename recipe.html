@@ -7,8 +7,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicons.png">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
     <!-- Font-awesome  -->
     <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
@@ -26,13 +28,12 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <!-- Custom CSS (styles.css) -->
-    <link rel="stylesheet" href="styles2.css">
     <!-- AOS Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bs-stepper.min.css">
 
     <!-- Latest compiled and minified CSS -->
-    <link href="css/rateyo.min.css" rel="stylesheet" />
+    <link href="css/styles2.css" rel="stylesheet" />
 
 
     <!-- Tags for responsiveness -->
@@ -196,9 +197,8 @@
 
 
     <h1 class="recipeTitle">
-        BBQ Biryani With Sauce
     </h1>
-   
+
 
     <div class="recipeRating">
         <span class="fa fa-star checked "></span>
@@ -217,14 +217,15 @@
 
 
             <div class="card " style="width: 40rem; margin-left: 4pc; margin-top: 1pc;">
-                <img src="images/food.jpg" class="card-img-top" alt="...">
+                <img src="" class="card-img-top" alt="images/food.jpg" id="recipePicture">
                 <!-- <div class="card-body">
          
         </div> -->
             </div>
             <div style="width: 70rem; margin-left: 4pc;margin-left: 4pc; margin-top:3pc;">
                 <h5 class="card-title">Description</h5>
-                <p class="card-text">It doesn't get much easier than this -- lean ground turkey and salsa ranchera
+                <p id="recipeDescriptionText" class="card-text">It doesn't get much easier than this -- lean ground
+                    turkey and salsa ranchera
                     combined and made in a pressure cooker such as Instant Pot®. Perfect for tacos, burritos, or even a
                     taco salad.</p>
 
@@ -235,18 +236,15 @@
 
 
 
-            <div class="card " style="width: 30rem; margin-left: 4pc; margin-top: 1pc;">
+            <div class="card " style="width: 30rem; margin-left: 4pc    ; margin-top: 1pc;">
 
-                
-                    <ul class="list-group">
-                        <li class="list-group-item active-button" aria-disabled="true">Ingredients</li>
-                        <li class="list-group-item">Chicken</li>
-                        <li class="list-group-item">Onions</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                      </ul>
 
-                
+                <ul class="list-group">
+                    <li class="list-group-item active-button" aria-disabled="true"> <h5>Ingredients </h5></li>
+
+                </ul>
+
+
             </div>
 
         </div>
@@ -256,10 +254,12 @@
 
 
 
-    <div class="mb-5 p-4 bg-white shadow-sm">
+    <div class="mb-5 p-4 bg-white shadow-sm" id="motu">
 
         <div id="stepper4" class="bs-stepper vertical">
-            <div class="bs-stepper-header" role="tablist">
+
+
+             <!-- <div class="bs-stepper-header" role="tablist">
                 <div class="step" data-target="#test-vl-1">
                     <button type="button" class="step-trigger" role="tab" id="stepper4trigger1"
                         aria-controls="test-vl-1">
@@ -267,30 +267,47 @@
                         <span class="bs-stepper-label">Step 1</span>
                     </button>
 
+                    <p class="stepsOnRecipe"> Add one cup of suger</p>
+
                 </div>
 
 
-                <div class="bs-stepper-line"></div>
-                <div class="step" data-target="#test-vl-2">
-                    <button type="button" class="step-trigger" role="tab" id="stepper4trigger2"
-                        aria-controls="test-vl-2">
-                        <span class="bs-stepper-circle">2</span>
-                        <span class="bs-stepper-label">Step 2</span>
-                    </button>
+
+                <div class="bs-stepper-header" role="tablist">
+                    <div class="step" data-target="#test-vl-1">
+                        <button type="button" class="step-trigger" role="tab" id="stepper4trigger1"
+                            aria-controls="test-vl-1">
+                            <span class="bs-stepper-circle">1</span>
+                            <span class="bs-stepper-label">Step 1</span>
+                        </button>
+
+                        <p class="stepsOnRecipe"> Add one cup of suger</p>
+
+                    </div>  -->
+
+
+<!-- 
+                    <div class="bs-stepper-line"></div>
+                    <div class="step" data-target="#test-vl-2">
+                        <button type="button" class="step-trigger" role="tab" id="stepper4trigger2"
+                            aria-controls="test-vl-2">
+                            <span class="bs-stepper-circle">2</span>
+                            <span class="bs-stepper-label">Step 2</span>
+                        </button>
+                    </div>
+                    <div class="bs-stepper-line"></div>
+                    <div class="step" data-target="#test-vl-3">
+                        <button type="button" class="step-trigger" role="tab" id="stepper4trigger3"
+                            aria-controls="test-vl-3">
+                            <span class="bs-stepper-circle">3</span>
+                            <span class="bs-stepper-label">Step 3</span>
+                        </button>
+                    </div> -->
                 </div>
-                <div class="bs-stepper-line"></div>
-                <div class="step" data-target="#test-vl-3">
-                    <button type="button" class="step-trigger" role="tab" id="stepper4trigger3"
-                        aria-controls="test-vl-3">
-                        <span class="bs-stepper-circle">3</span>
-                        <span class="bs-stepper-label">Step 3</span>
-                    </button>
-                </div>
+
+                </form>
             </div>
-
-            </form>
         </div>
-    </div>
     </div>
 
 
@@ -298,8 +315,8 @@
     <div style="width: 70rem; ;margin-left: 3pc; ">
         <h5 class="card-title">Add a review</h5>
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="Rating"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="Rating" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 Dropdown button
             </button>
             <div class="dropdown-menu" aria-labelledby="Rating">
@@ -350,16 +367,16 @@
     </div>
 
 
-        <div style="width: 70rem; ;margin-left: 3pc; margin-top: 1pc;">
+    <div style="width: 70rem; ;margin-left: 3pc; margin-top: 1pc;">
 
-            <h5 class="card-title">Comment</h5>
-            <div class="form-group">
-                
-                <textarea class="form-control recipe-comment" id="exampleFormControlTextarea1" rows="8"></textarea>
-            </div>
-            <a href="#" class="btn btn-warning  submitButton" role="button" aria-pressed="true">Submit</a>
+        <h5 class="card-title">Comment</h5>
+        <div class="form-group">
 
+            <textarea class="form-control recipe-comment" id="exampleFormControlTextarea1" rows="8"></textarea>
         </div>
+        <a href="#" class="btn btn-warning  submitButton" role="button" aria-pressed="true">Submit</a>
+
+    </div>
 
 
 
@@ -376,45 +393,46 @@
 
 
 
-        <!--FOOTER -->
-        <footer class="white-section" id="footer">
-            <div class="cta container-fluid">
+    <!--FOOTER -->
+    <footer class="white-section" id="footer">
+        <div class="cta container-fluid">
 
-                <div class="cta-col-1">
-                    <img src="images/logo.png" alt="logo image">
-                    <p>A Nevada Based Corporation</p>
-                    <p>support@pourlog.com</p>
-                    <div class="icons"><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i
-                            class="fab fa-instagram"></i></div>
-                </div>
-
-
-
-                <p class="paraInFooter">© 2020 Copyright: Pourlog.com</p>
+            <div class="cta-col-1">
+                <img src="images/logo.png" alt="logo image">
+                <p>A Nevada Based Corporation</p>
+                <p>support@pourlog.com</p>
+                <div class="icons"><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i
+                        class="fab fa-instagram"></i></div>
             </div>
-        </footer>
+
+
+
+            <p class="paraInFooter">© 2020 Copyright: Pourlog.com</p>
+        </div>
+    </footer>
 
 
 
 
-        <script src="js/rateyo.min.js"></script>
 
 
 
-        <script src="js/bs-stepper.min.js"></script>
-        <script src="recipe.js"></script>
+    <script src="js/bs-stepper.min.js"></script>
+    <script src="js/recipe.js"></script>
+    <!-- <script src="js/index.js"></script> -->
 
-        <!-- Jquery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.js"
-            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <!-- Custom JS (index.js) -->
-        <!-- <script src="recipe.js" charset="utf-8"></script> -->
 
-        <!-- AOS Library JS -->
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Custom JS (index.js) -->
+    <!-- <script src="recipe.js" charset="utf-8"></script> -->
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
 
