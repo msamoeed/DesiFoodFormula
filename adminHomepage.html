@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>DesiFoodFormula</title>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -29,7 +33,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
-</head>
+</head>  
 
 <body>
 
@@ -51,10 +55,10 @@
                     Abdul Moeed
                   </button>
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item drop" href="#"><i class="fa fa-cutlery icons" aria-hidden="true"></i> Recipes</a>
-                    <a class="dropdown-item drop" href="#"><i class="fa fa-heart icons" aria-hidden="true"></i> Users</a>
+                    <a class="dropdown-item drop" href="adminRecipes.html"><i class="fa fa-cutlery icons" aria-hidden="true"></i> Recipes</a>
+                    <a class="dropdown-item drop" href="users.html"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item drop" href="#"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</a>
+                    <a class="dropdown-item drop" href="inbox.html"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item drop" href="#"><i class="fa fa-sign-out icons" aria-hidden="true"></i> Logout</a>
                   </div>
@@ -68,11 +72,11 @@
       <!-- Options Section -->
       <section id="options">
           <div class="row>">
-              <div class="col-lg-6 option1">
+              <div id="users" class="col-lg-6 option1">
                 <img id="images" src="images/users.png" alt="Users"> 
                 <h1 id="text">Users</h1>
               </div>
-              <div class="col-lg-6 option1">
+              <div id="recipes" class="col-lg-6 option1">
                 <img id="images" src="images/recipes.png" alt="Recipes">
                 <h1 id="text">Recipes</h1>
             </div>
@@ -87,6 +91,7 @@
 
     <!-- Custom JS (index.js) -->
     <script src="js/adminLogin.js" charset="utf-8"></script>
+    <script src="js/adminHomepage.js" charset="utf-8"></script>
 
 </body>
 

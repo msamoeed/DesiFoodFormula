@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>DesiFoodFormula</title>
+    <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicons.png">
     <!-- Font-awesome  -->
     <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
@@ -52,7 +54,9 @@
                   </button>
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item drop" href="#"><i class="fa fa-cutlery icons" aria-hidden="true"></i> Recipes</a>
-                    <a class="dropdown-item drop" href="#"><i class="fa fa-heart icons" aria-hidden="true"></i> Users</a>
+                    <a class="dropdown-item drop" href="users.html"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item drop" href="inbox.html"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item drop" href="#"><i class="fa fa-sign-out icons" aria-hidden="true"></i> Logout</a>
                   </div>
@@ -91,7 +95,7 @@
             
         
             <!-- Sign up button -->
-            <button class="btn btn-info my-4 btn-block" type="submit">Add User</button>
+            <button class="btn btn-info my-4 btn-block" id="addUserButton" type="submit">Add User</button>
         
         </form>
       </section>
@@ -103,6 +107,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Custom JS (index.js) -->
+    <script src="js/adminLogin.js" charset="utf-8"></script>
     <script src="js/addUsers.js" charset="utf-8"></script>
 
 </body>

@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>DesiFoodFormula</title>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicons.png">
     <!-- Font-awesome  -->
     <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
@@ -35,7 +37,7 @@
 
     <img src="images/salad.jpg" id="bg" alt="">
 
-    <!---------------------- Navbar ------------------------->
+    <!---------------------- Navbar ------------------------>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html"> <img class="nav-logo" src="images/logo.png" alt="logo" width="50px"> </a>
         <h3> DesiFoodFormula</h3>
@@ -90,7 +92,7 @@
                               <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
                             </div>
                             <div class="text-center mt-2 log-sign-btn">
-                              <button form="modalLRForm" type="submit" class="btn btn-info">LogIn</i></button>
+                              <button form="modalLRForm" type="submit" id="logInButton" class="btn btn-info">LogIn</i></button>
                             </div>
                             <div class="text-center mt-2">
                               <a href="#">Forgot Password ?</a>
@@ -112,12 +114,12 @@
     
                             <div class="md-form form-sm mb-5">
                               <label data-error="wrong" data-success="right" for="modalLRInput13">Username</label>
-                              <input type="text" id="modalLRInput13" class="form-control form-control-sm validate">
+                              <input type="text" id="adminNameSignUp" class="form-control form-control-sm validate">
                             </div>
     
                             <div class="md-form form-sm mb-5">
                               <label data-error="wrong" data-success="right" for="modalLRInput12">Email</label>
-                              <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                              <input type="email" id="emailSignUp" class="form-control form-control-sm validate">
                             </div>
     
                             <div class="md-form form-sm mb-5">
@@ -128,13 +130,13 @@
     
                             <div class="md-form form-sm mb-5">
                               <label data-error="wrong" data-success="right" for="modalLRInput13">Repeat Password</label>
-                              <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                              <input type="password" id="modalLRInputFinal" class="form-control form-control-sm validate">
                               <p class="passwd-pattern">Password should be 7 characters long</p>
                             </div>
     
     
                             <div class="text-center form-sm mt-2 log-sign-btn">
-                              <button form="modalLRForm" type="submit" class="btn btn-info" class="btn btn-info">Sign
+                              <button form="modalLRForm" type="submit" id="signUpButton" class="btn btn-info" class="btn btn-info">Sign
                                 up</button>
                             </div>
     

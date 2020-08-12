@@ -258,6 +258,10 @@ hr{
   /* margin: 0.5rem; */
 }
 
+.card:hover{
+  background-color: lightgrey;
+}
+
 /* Search Section */
 .searchByIngredients{
   padding: 100px;
@@ -341,12 +345,15 @@ hr{
 
 .icons{
   padding: 0% 5%;
+  
 }
 
 .icons:hover{
   color: #32c5d2;
 }
 
-
-
+#linkToAdmin{
+  color: white;
+  text-decoration: underline;
+}
 

@@ -96,7 +96,7 @@ $("#addrecipebutton1").click(function() {
  
   var ingr = $("#ingred").val();
   alert(ingr);
-  data.push(ingredientsAdded);
+  ingredientsAdded.push(ingr);
   $('#smth').after('<button type="button" id="ingg" class="btn btn-dark ingredient-remove">'+ingr+'</button>');
  
 });
@@ -104,7 +104,7 @@ $("#addrecipebutton1").click(function() {
 $("#removerecipebutton1").click(function(){
 
   $('#ingg').remove();
-  data.pop();
+  ingredientsAdded.pop();
 });
 
 
@@ -201,11 +201,6 @@ function SignIn() {
         var decoded = JSON.stringify(userData);
 
         buttonText = decoded;
-
-
-
-
-
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -280,10 +275,7 @@ $(document).on("click",".checkButton",function() {
 
 
 
-  //First letter capital
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+      
   
 
  

@@ -17,7 +17,7 @@
       border-bottom: 0.0625rem solid #cfd9e6;
       color: white;
     }
-    
+     
     .nav-logo {
       width: 9rem;
       height: 5rem;
@@ -247,12 +247,29 @@
     
     }
 
-    #addUserForm{
+    #messageCards{
         position: relative;
-        background-color: white;
-        /* padding: 7% 7%; */
-        margin: 6rem;
-        margin-left: 30rem;
-        margin-right: 30rem;
+        padding: 0% 15%
+    }
 
+    .card1{
+        background-color: white;
+        border-radius: 4%;
+        padding: 2% 2%;
+        margin: 3%;
+        margin-right: 50%;
+  
+    }
+
+    .btn{
+        margin: 0.2rem;
+    }
+
+    #images{
+        width: 60px;
+        height: 60px;
+    }
+
+    #subject{
+        font-weight: bolder;
     }
