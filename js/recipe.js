@@ -17,9 +17,9 @@ var db = firebase.firestore();
 var vOneLS = localStorage.getItem("foodId");
 
 
+alert(vOneLS);
 
-
-db.collection("menu").where("id", "==", parseInt(vOneLS))
+db.collection("menu").where("recipeId", "==", (vOneLS)).limit(1)
   .get()
   .then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
@@ -27,13 +27,20 @@ db.collection("menu").where("id", "==", parseInt(vOneLS))
       $('.recipeTitle').html(capitalizeFirstLetter(doc.data().name));
       $('#recipePicture').attr("src", doc.data().image);
       $('#recipeDescriptionText').html( capitalizeFirstLetter(doc.data().description));
+      time = doc.data().minutes;
+      var timeHtml = ' <li class="list-group-item">' + doc.data().minutes  + " mins" +  '</li>';
+      $('#timeTotal').append(timeHtml);
       var ingrediants = doc.data().ingredients;
       var steps = doc.data().steps;
       for (var x = 0; x < ingrediants.length; x++) {
         var html = ' <li class="list-group-item">' + capitalizeFirstLetter(ingrediants[x])  + '</li>'
-        $('.list-group').append(html);
+        $('#ingredTotal').append(html);
 
       }
+
+      
+
+   
 
       for (var x = 0; x < steps.length; x++) {
           
@@ -57,3 +64,6 @@ db.collection("menu").where("id", "==", parseInt(vOneLS))
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+
+  

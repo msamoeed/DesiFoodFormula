@@ -8,10 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
         rel="stylesheet">
 
+        https://unpkg.com/@popperjs/core@2
+
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>
+
     <!-- Font-awesome  -->
+
     <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -50,7 +55,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
-        <a class="navbar-brand" href="index.html"> <img class="nav-logo" src="images/logo.png" alt="logo" width="50px">
+        <a class="navbar-brand" href="#"> <img class="nav-logo" src="images/logo.png" alt="logo" width="50px">
         </a>
         <h3> DesiFoodFormula</h3>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -217,7 +222,7 @@
 
 
             <div class="card " style="width: 40rem; margin-left: 4pc; margin-top: 1pc;">
-                <img src="" class="card-img-top" alt="images/food.jpg" id="recipePicture">
+                <img src="" class="card-img-top"  id="recipePicture">
                 <!-- <div class="card-body">
          
         </div> -->
@@ -239,8 +244,13 @@
             <div class="card " style="width: 30rem; margin-left: 4pc    ; margin-top: 1pc;">
 
 
-                <ul class="list-group">
+                <ul class="list-group" id ="ingredTotal">
                     <li class="list-group-item active-button" aria-disabled="true"> <h5>Ingredients </h5></li>
+
+                </ul>
+
+                <ul class="list-group" id="timeTotal">
+                    <li class="list-group-item active-button" aria-disabled="true"> <h5>Time </h5></li>
 
                 </ul>
 
@@ -319,42 +329,42 @@
                 aria-haspopup="true" aria-expanded="false">
                 Dropdown button
             </button>
-            <div class="dropdown-menu" aria-labelledby="Rating">
+            <div class="dropdown-menu" id="#myDropdown" aria-labelledby="Rating">
 
-                <div class="dropdown-item">
+                <div class="dropdown-item" id="5-star">
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked "></span>
-
-                </div>
-
-                <div class="dropdown-item">
-                    <span class="fa fa-star checked "></span>
-                    <span class="fa fa-star checked "></span>
-                    <span class="fa fa-star checked "></span>
-                    <span class="fa fa-star checked "></span>
-                    <span class="fa fa-star"></span>
 
                 </div>
-                <div class="dropdown-item">
+
+                <div class="dropdown-item" id="4-star">
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked "></span>
-                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked "></span>
                     <span class="fa fa-star"></span>
 
                 </div>
-                <div class="dropdown-item">
+                <div class="dropdown-item" id="3-star">
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked "></span>
-                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked "></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
 
                 </div>
-                <div class="dropdown-item">
+                <div class="dropdown-item" id="2-star">
+                    <span class="fa fa-sta r checked "></span>
+                    <span class="fa fa-star checked "></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </div>
+                <div class="dropdown-item" id="1-star">
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
@@ -374,7 +384,7 @@
 
             <textarea class="form-control recipe-comment" id="exampleFormControlTextarea1" rows="8"></textarea>
         </div>
-        <a href="#" class="btn btn-warning  submitButton" role="button" aria-pressed="true">Submit</a>
+        <a href="#"  id="submitButton"class="btn btn-warning  submitButton" role="button" aria-pressed="true">Submit</a>
 
     </div>
 
@@ -419,6 +429,8 @@
 
     <script src="js/bs-stepper.min.js"></script>
     <script src="js/recipe.js"></script>
+    <script src="js/homeButton.js" charset="utf-8"></script>
+
     <!-- <script src="js/index.js"></script> -->
 
 

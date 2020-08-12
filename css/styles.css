@@ -16,10 +16,12 @@ html {
   border-bottom: 0.0625rem solid #cfd9e6;
 }
 
-/* #mainImage{
+#mainImage{
   height: 250px;
-  width: 220px;
-} */
+  width: 370px;
+  background-image:url('images/food.jpg');
+
+}
 
 .nav-logo {
   width: 9rem;

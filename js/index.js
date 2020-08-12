@@ -65,7 +65,7 @@ $(".navbar-toggler").click(function () {
 })
 
 
-
+var data = [];
 
 //Search Recipes Section
 
@@ -80,9 +80,12 @@ var ingredientsAdded = [];
 
 $(".ing1").click(function(){
   var ingredient = $(this).html();
-  ingredientsAdded.push(ingredient);
+  
   console.log(ingredientsAdded);
   $('#smth').after('<button type="button" id="ingg" class="btn btn-dark ingredient-remove">'+ingredient+'</button>');
+
+  ingredient = lowerCaseFirstLetter(ingredient);
+  ingredientsAdded.push(ingredient);
 });
 
 
@@ -95,9 +98,12 @@ $(".clear1").click(function(){
 $("#addrecipebutton1").click(function() {
  
   var ingr = $("#ingred").val();
-  alert(ingr);
-  ingredientsAdded.push(ingr);
+ 
   $('#smth').after('<button type="button" id="ingg" class="btn btn-dark ingredient-remove">'+ingr+'</button>');
+  ingr.toString().trim().toLowerCase();
+ ingr = lowerCaseFirstLetter(ingr);
+  ingredientsAdded.push(ingr);
+
  
 });
 
@@ -106,6 +112,36 @@ $("#removerecipebutton1").click(function(){
   $('#ingg').remove();
   ingredientsAdded.pop();
 });
+
+//Search Recipe using ingredients
+
+$('#searchIt').click(function(){
+
+
+  var node = document.getElementById('recipeCards');
+  node.innerHTML = "";
+
+
+
+
+  db.collection("menu").where('ingredients', 'array-contains-any', ingredientsAdded)
+  .get()
+  .then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+
+      // doc.data() is never undefined for query doc snapshots
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+      $("#recipeCards").append(htmlString);
+
+    });
+  })
+  .catch(function (error) {
+    console.log("Error getting documents: ", error);
+  });
+
+});
+
+
 
 
 //FIREBASE AUTH
@@ -186,61 +222,56 @@ function SignIn() {
 
   var email = $("#modalLRInput10").val();
   var pass = $("#modalLRInput11").val();
-  firebase.auth().signInWithEmailAndPassword(email, pass).then(function (userCreds) {
+  firebase.auth().signOut().then(function() {
+    console.log('Signed Out');
+    firebase.auth().signInWithEmailAndPassword(email, pass).then(function (userCreds) {
 
-    user = firebase.auth().currentUser;
-    var uid = user.uid;
-
-    
-    localStorage.setItem("uid", uid);
-
-   
-    docRef.get().then(function (doc) {
-      if (doc.exists) {
-        var userData = doc.data();
-        var decoded = JSON.stringify(userData);
-
-        buttonText = decoded;
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
+      user = firebase.auth().currentUser;
+      var uid = user.uid;
+       
+  
+      localStorage.setItem("uid", uid);
+  
+     
+      if (localStorage.getItem("uid") != null)
+      window.location.href = 'homeAfterLogin.html';
+  
     }).catch(function (error) {
-      console.log("Error getting document:", error);
+  
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // [START_EXCLUDE]
+      if (errorCode === 'auth/wrong-password') {
+        alert('Wrong password.');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+  
     });
-
-  }).catch(function (error) {
-
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // [START_EXCLUDE]
-    if (errorCode === 'auth/wrong-password') {
-      alert('Wrong password.');
-    } else {
-      alert(errorMessage);
-    }
-    console.log(error);
-
+  }, function(error) {
+    console.error('Sign Out Error', error);
   });
+  
+  
   // [END authwithemail]
 }
 $("#logInButton").click(function () {
 
-  var pass = $("#modalLRInput11").val();
-  var pass = $("#modalLRInput11").val();
+ 
   SignIn();
-
-  if (localStorage.getItem("uid") != null)
-    window.location.href = 'homeAfterLogin.html';
+    alert(localStorage.getItem("uid"));
+ 
 });
 
-
-db.collection("menu").limit(16)
+var limit = 16;
+db.collection("menu").limit(limit)
   .get()
   .then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
+   //   localStorage.setItem("uid", null);
       // doc.data() is never undefined for query doc snapshots
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6"><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'" alt="Card image cap" ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-primary checkButton"  id= "' + doc.data().id + '" >Check</a></div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
       $("#recipeCards").append(htmlString);
 
     });
@@ -249,16 +280,38 @@ db.collection("menu").limit(16)
     console.log("Error getting documents: ", error);
   });
 
+  
 
-// $('#checkButton').on('click', function (e) {
-//   alert("asd");
-//   disconnectFunction(e.target);
-// });
+
+$('#showMore1').click(function(){
+  
+  recipeCardsIndex
+  limit = limit + 8;
+  var node = document.getElementById('recipeCards');
+node.innerHTML = "";
+
+
+db.collection("menu").limit(limit)
+  .get()
+  .then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+      // doc.data() is never undefined for query doc snapshots
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+      $("#recipeCards").append(htmlString);
+
+    });
+  })
+  .catch(function (error) {
+    console.log("Error getting documents: ", error);
+  });
+
+  
+});
+
 
 $(document).on("click",".checkButton",function() {
   var foodId = $(this).attr("id");
        
-
       localStorage.setItem("foodId", foodId);
 
       if (localStorage.getItem("foodId") != null){
@@ -279,14 +332,87 @@ $(document).on("click",".checkButton",function() {
   
 
  
+  //First letter lowercase
+  function lowerCaseFirstLetter(string) {
+    return string.charAt(0).toLowerCase() + string.slice(1);
+  }
+  
+ 
+  
+  
+//Search Recipee
+
+$("#searchIcon").click(function(){
+
+    var name = $("#searchByName").val();
+
+    var node = document.getElementById('recipeCards');
+    node.innerHTML = "";
+
+    alert(name);
+    db.collection("menu").where('name', '==', name)
+  .get()
+  .then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+
+
     
 
+      // doc.data() is never undefined for query doc snapshots
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+      $("#recipeCards").append(htmlString);
+      alert(doc.data().name);
 
 
- 
+    });
+  })
+  .catch(function (error) {
+    console.log("Error getting documents: ", error);
+  });
+
+});
+
+
+
   
+///SEND MESSAGE////
+
+$(".btn-unique").click(function(){
+
+
+var nameM =  $('#form34').val();
+var message =  $('#form8').val();
+var subject =  $('#form32').val();
+var email =  $('#form29').val();
+
+const newId = generateUniqueFirestoreId();
+
+
+var datake= db.collection("userMessages").doc(newId).set({
+  name: nameM, // <======= this part
+  message:  message,
+  subject: subject,
+  email : email,
+  id : newId
+}).then(function(){
+
+  alert('Message sent!')
+})
+
+
+.catch(error => console.error("Error adding document: ", error))
+  }); 
   
-                    
 
 
- 
+  function generateUniqueFirestoreId(){
+    // Alphanumeric characters
+    const chars =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let autoId = '';
+    for (let i = 0; i < 20; i++) {
+      autoId += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+  
+    return autoId;
+  }

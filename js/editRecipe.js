@@ -1,36 +1,83 @@
 
-
 //DATABASE INSTANCE
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCJqiGG0RkCOgLjW_CVzd4D4ADxNOf-hrQ",
-  authDomain: "desifoodformula.firebaseapp.com",
-  databaseURL: "https://desifoodformula.firebaseio.com",
-  projectId: "desifoodformula",
-  storageBucket: "desifoodformula.appspot.com",
-  messagingSenderId: "491407610363",
-  appId: "1:491407610363:web:35ac62200d4cdfa252fb5e",
-  measurementId: "G-2LL6X1QNLB"
-};
+    apiKey: "AIzaSyCJqiGG0RkCOgLjW_CVzd4D4ADxNOf-hrQ",
+    authDomain: "desifoodformula.firebaseapp.com",
+    databaseURL: "https://desifoodformula.firebaseio.com",
+    projectId: "desifoodformula",
+    storageBucket: "desifoodformula.appspot.com",
+    messagingSenderId: "491407610363",
+    appId: "1:491407610363:web:35ac62200d4cdfa252fb5e",
+    measurementId: "G-2LL6X1QNLB"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  
+  var db = firebase.firestore();
+  
+  
+  //Logged In NAV BAR
+  var db = firebase.firestore();
+  
+  var vOneLS = localStorage.getItem("uid");  
+  
+  db.collection("users").doc(vOneLS)
+  .onSnapshot(function(doc) {
+      
+   $('#btnGroupDrop1').html(doc.data().username);
+  
+  });
 
-firebase.initializeApp(firebaseConfig);
+var foodIdEdit;
 
-var db = firebase.firestore();
+  var edit = localStorage.getItem("editFood");  
 
+  db.collection("menu").where('id', '==',edit)
+  .get()
+  .then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
 
-//Logged In NAV BAR
-var db = firebase.firestore();
+        
+        foodIdEdit = doc.data().id;
+        
+  // var set =        localStorage.setItem("editFoodId", doc.data().id);  
 
-var vOneLS = localStorage.getItem("uid");  
-
-db.collection("users").doc(vOneLS)
-.onSnapshot(function(doc) {
     
- $('#btnGroupDrop1').html(doc.data().username);
+       $('#recipeName').attr("placeholder", doc.data().name);
+       $('#totalTimeMins').attr("placeholder", doc.data().time);
+       $('#recipeDescription').attr("placeholder", doc.data().description);
+       var ingrediants = doc.data().ingredients;
+       for (var x = 0 ; x < ingrediants.length; x++){
 
-});
 
-//Moeed's work
+        var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc; background-color :"#318fb5" id="badgeRec" class="btn btn-primary  badgerecipe">' + doc.data().ingredients[x] ;
+        var element =   $('.list-group').after(htmlString);
+ 
+       }
+   
+       for (var x = 0 ; x < doc.data().steps.length; x++){
+
+
+        var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc" id="badgeStep" class="btn btn-primary  badgerecipe">' + doc.data().steps[x] ;
+
+        var element =   $('#steps2List').append("<p id='badgeStep' >" +  doc.data().steps[x]  + "</p>");
+ 
+       }
+
+
+    });
+  })
+  .catch(function (error) {
+    console.log("Error getting documents: ", error);
+  });
+
+
+
+
+
+
+  //Moeed's work
 
 var data = [];
 var steps = [];
@@ -124,7 +171,7 @@ $('#submitButton').click(function(){
 
 var imgdownload = localStorage.getItem("linkOfImage");  
 
-  db.collection("menu").doc().set({
+  db.collection("menu").doc(foodIdEdit).update({
    image: imgdownload, // <======= this part  took me ages to get right.
     name: name,
    description: description,
@@ -132,7 +179,7 @@ var imgdownload = localStorage.getItem("linkOfImage");
    steps : steps,
    uid : vOneLS,
    time : totalTime,
-   id : generateUniqueFirestoreId(),
+   id : foodIdEdit,
 
   })
     .then(function () {
@@ -146,17 +193,3 @@ var imgdownload = localStorage.getItem("linkOfImage");
 
 
 });
-
-
-
-function generateUniqueFirestoreId(){
-  // Alphanumeric characters
-  const chars =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let autoId = '';
-  for (let i = 0; i < 20; i++) {
-    autoId += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-
-  return autoId;
-}
