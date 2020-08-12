@@ -34,8 +34,14 @@ html {
   background-color: #318fb5;
   
 }
+
+#recipePicture{
+  background-image: url(images/food.jpg);
+  height: 400px;
+  width: 700px;
+}
 #badgeStep{
-  color: #005086;
+  color: white;
   background-color:#005086;
 }
 .header-recipe{
