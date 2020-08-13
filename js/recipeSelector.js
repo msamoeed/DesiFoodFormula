@@ -38,7 +38,7 @@ const firebaseConfig = {
     
 
       // doc.data() is never undefined for query doc snapshots
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.data().id + '" >Delete</a> </div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div> '
       $("#recipeCards").append(htmlString);
 
 

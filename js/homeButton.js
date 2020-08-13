@@ -87,7 +87,6 @@ var selectedID;
 var recipe = localStorage.getItem("foodId");
 
 $("#submitButton").click(function () {
-  alert("asdasd");
   var checkLogin = localStorage.getItem("uid");
   // var selectedID = $('.dropdown-item').attr("id");
   if (checkLogin != "null") {
@@ -167,7 +166,9 @@ db.collection("users").doc(vOneLS)
   }
 
   else {
-     alert("Please Sign-In to comment")
+    
+  
+    
 
   }
 

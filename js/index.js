@@ -130,7 +130,7 @@ $('#searchIt').click(function(){
     querySnapshot.forEach(function (doc) {
 
       // doc.data() is never undefined for query doc snapshots
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >See More</a></div></div> '
       $("#recipeCards").append(htmlString);
 
     });
@@ -164,7 +164,7 @@ function search(force) {
           var recipeName33 = recipeName22.toLowerCase();
           // alert(recipeName33+ "boooo");
           if(recipeName33.startsWith(searchValue)){
-              var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+              var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >See More</a></div></div> '
               $("#recipeCards").append(htmlString);
           }
           // else{
@@ -316,7 +316,7 @@ db.collection("menu").limit(limit)
     querySnapshot.forEach(function (doc) {
    //   localStorage.setItem("uid", null);
       // doc.data() is never undefined for query doc snapshots
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >See More</a></div></div> '
       $("#recipeCards").append(htmlString);
 
     });
@@ -341,7 +341,7 @@ db.collection("menu").limit(limit)
   .then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
       // doc.data() is never undefined for query doc snapshots
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail" src= "' + doc.data().image+'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >See More</a></div></div> '
       $("#recipeCards").append(htmlString);
 
     });
@@ -356,7 +356,6 @@ db.collection("menu").limit(limit)
 
 $(document).on("click",".checkButton",function() {
   var foodId = $(this).attr("id");
-       
       localStorage.setItem("foodId", foodId);
 
       if (localStorage.getItem("foodId") != null){
@@ -407,7 +406,7 @@ $("#searchIcon").click(function(){
     
 
       // doc.data() is never undefined for query doc snapshots
-      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+      var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >See More</a></div></div> '
       $("#recipeCards").append(htmlString);
 
 
