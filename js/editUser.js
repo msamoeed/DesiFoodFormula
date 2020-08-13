@@ -39,8 +39,8 @@ db.collection("users")
         var username2 = $('#username').val();
         var email2 = $('#email').val();
 
-        db.collection("users").doc("RMZq8gHM6WVFeTFZvCL770kdYls1").update({
-            uid: "RMZq8gHM6WVFeTFZvCL770kdYls1",
+        db.collection("users").doc(vOneLS1).update({
+            uid: vOneLS1,
             username: "username2",
             email: "email2",
       

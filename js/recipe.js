@@ -37,11 +37,6 @@ db.collection("menu").where("recipeId", "==", (vOneLS)).limit(1)
         $('#ingredTotal').append(html);
 
       }
-
-      
-
-   
-
       for (var x = 0; x < steps.length; x++) {
           
       
@@ -50,15 +45,47 @@ db.collection("menu").where("recipeId", "==", (vOneLS)).limit(1)
        // $('.step').append(html);
 
       }
-
-
-
     });
   })
   .catch(function (error) {
     console.log("Error getting documents: ", error);
   });
 
+  var userID;
+  var rating;
+  var comment;
+
+// To add comments
+  db.collection("recipeReviews").where("recipeId", "==", (vOneLS))
+  .get()
+  .then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+      userID = doc.data().uid;
+      rating = doc.data().rating;
+      comment = doc.data().comment;
+
+      db.collection("users").where('uid', '==', userID)
+        .get()
+        .then(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            var rating1 = document.getElementById(rating);
+            var ratingHTML = rating1.innerHTML;
+
+            var htmlString = ' <div class="row card1"><div class="col-lg-1"><img id="images" src="images/user.png" alt="User"> </div> <div class="col-lg-11"> <div class="dropdown-item" id="' + rating + '"> ' + ratingHTML + '</div> <h6 id="username"><b>' + doc.data().username + '</b></h6> <p id="comment">' + comment + '</p></div></div>';
+            $("#commentsSection").append(htmlString);
+
+
+          });
+        })
+        .catch(function (error) {
+          console.log("Error getting documents: ", error);
+        });
+ 
+    });
+  })
+  .catch(function (error) {
+    console.log("Error getting documents: ", error);
+  });
 
   //First letter capital
   function capitalizeFirstLetter(string) {

@@ -141,6 +141,43 @@ $('#searchIt').click(function(){
 
 });
 
+$('#searchByName').keyup(function(e) {
+  clearTimeout($.data(this, 'timer'));
+  if (e.keyCode == 13 || e.keyCode == 8)
+    search(true);
+  else
+    $(this).data('timer', setTimeout(search, 500));
+});
+
+
+function search(force) {
+ 
+  var searchValue = $('#searchByName').val(); 
+  if (!force && searchValue.length < 1) return; //wasn't enter, not > 2 char
+  var node = document.getElementById('recipeCards');
+  node.innerHTML = "";  
+  db.collection("menu")
+  .get()
+  .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {  
+          var recipeName22 = doc.data().name;
+          var recipeName33 = recipeName22.toLowerCase();
+          // alert(recipeName33+ "boooo");
+          if(recipeName33.startsWith(searchValue)){
+              var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+              $("#recipeCards").append(htmlString);
+          }
+          // else{
+          //     alert("no match!");
+          // }
+
+      });
+  })
+  .catch(function (error) {
+      console.log("Error getting documents: ", error);
+  });
+}
+
 
 
 
@@ -163,8 +200,16 @@ var db = firebase.firestore();
 
 // //SIGN UP ON PRESS//
 $("#signUpButton").click(function () {
-  addUserDataSignUp();
-  alert("Signed up!");
+  var password1 = $("#modalLRInput13").val();
+  var password2 = $("#modalLRInputFinal").val();
+
+  if(password1 == password2){
+    addUserDataSignUp();
+    alert("Signed up!");
+  }
+  else{
+    alert("Passwords do not match.");
+  }
 });
 
 
@@ -328,7 +373,10 @@ $(document).on("click",".checkButton",function() {
 
 
 
-      
+  //First letter capital
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   
 
  
@@ -361,7 +409,6 @@ $("#searchIcon").click(function(){
       // doc.data() is never undefined for query doc snapshots
       var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
       $("#recipeCards").append(htmlString);
-      alert(doc.data().name);
 
 
     });
