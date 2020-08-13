@@ -9,15 +9,14 @@ var db = firebase.firestore();
 var foodIdEdit;
 
 var edit = localStorage.getItem("recipeID1");
-alert(edit);
 
-db.collection("menu").where('recipeId', '==', edit)
+db.collection("menu").doc(edit)
     .get()
-    .then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
+    .then(function(doc) {
 
 
             foodIdEdit = doc.data().recipeId;
+            alert(doc.data().name);
 
 
 
@@ -43,8 +42,8 @@ db.collection("menu").where('recipeId', '==', edit)
             }
 
 
-        });
-    })
+        })
+    
     .catch(function (error) {
         console.log("Error getting documents: ", error);
     });
@@ -151,7 +150,7 @@ $('#submitButton').click(function () {
     alert("Edit: "+edit);
     alert("FoodIdEdit: "+foodIdEdit);
 
-    db.collection("menu").where("recipeId", "==", edit).set({
+    db.collection("menu").doc(edit).update({
         image: imgdownload, // <======= this part  took me ages to get right.
         name: name,
         description: description,
