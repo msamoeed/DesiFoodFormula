@@ -166,7 +166,9 @@ db.collection("users").doc(vOneLS)
   }
 
   else {
-     alert("Please Sign-In to comment")
+    
+  
+    
 
   }
 

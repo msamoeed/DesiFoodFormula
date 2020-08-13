@@ -18,14 +18,13 @@ var foodIdEdit;
 
 var edit = localStorage.getItem("recipeID1");
 
-
 db.collection("menu").doc(edit)
     .get()
-    .then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
+    .then(function(doc) {
 
 
             foodIdEdit = doc.data().recipeId;
+            alert(doc.data().name);
 
 
 
@@ -51,8 +50,8 @@ db.collection("menu").doc(edit)
             }
 
 
-        });
-    })
+        })
+    
     .catch(function (error) {
         console.log("Error getting documents: ", error);
     });
@@ -157,7 +156,7 @@ $('#submitButton').click(function () {
 
     var imgdownload = localStorage.getItem("linkOfImage");
 
-    db.collection("menu").where("recipeId", "==", edit).set({
+    db.collection("menu").doc(edit).update({
         image: imgdownload, // <======= this part  took me ages to get right.
         name: name,
         description: description,

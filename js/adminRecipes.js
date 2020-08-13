@@ -172,6 +172,7 @@ function search(force) {
         .get()
         .then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
+                alert(doc.id + "HERLLOO");
                 var recipeName22 = doc.data().name;
                 var recipeName33 = recipeName22.toLowerCase();
               
@@ -204,15 +205,13 @@ db.collection("menu").limit(limit)
     .get()
     .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.id + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div>'
+            console.log(doc.id);
+            var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.data().recipeId + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div>'
             $("#recipeCards").append(htmlString);
 
         });
     })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        console.log("You can now NOT access .this as expected: ", this.foo)
-    })
+   
     .catch(function (error) {
         console.log("Error getting documents: ", error);
     });
@@ -232,7 +231,7 @@ $('#showMore1').click(function () {
         .get()
         .then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
-                var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' +doc.id + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div>'
+                var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.data().recipeId + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div>'
                 $("#recipeCards").append(htmlString);
 
             });
@@ -281,7 +280,7 @@ $("#searchIcon").click(function () {
 
 
                 // doc.data() is never undefined for query doc snapshots
-                var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.data().recipeId + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
+                var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.data().recipeId + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div>'
                 $("#recipeCards").append(htmlString);
 
 
@@ -332,3 +331,4 @@ $(document).on("click", ".checkButton", function () {
     }
 
 });
+

@@ -417,3 +417,7 @@ hr{
   width: 60px;
   height: 60px;
 }
+
+#fav-button{
+  margin-left: 3pc;
+}
