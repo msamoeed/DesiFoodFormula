@@ -2,7 +2,6 @@ var db = firebase.firestore();
 
 var vOneLS = localStorage.getItem("uid");  
 
- alert(vOneLS);
 db.collection("users").doc(vOneLS)
 .onSnapshot(function(doc) {
     
@@ -19,7 +18,6 @@ $("#searchIcon").click(function(){
     var node = document.getElementById('recipeCards');
     node.innerHTML = "";
 
-    alert(name);
     db.collection("menu").where('name', '==', name)
   .get()
   .then(function (querySnapshot) {

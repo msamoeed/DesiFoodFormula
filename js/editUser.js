@@ -38,11 +38,13 @@ db.collection("users")
     $('#saveChanges').click(function(){
         var username2 = $('#username').val();
         var email2 = $('#email').val();
+       
+
+     
 
         db.collection("users").doc(vOneLS1).update({
-            uid: vOneLS1,
-            username: "username2",
-            email: "email2",
+            username: username2,
+            email: email2,
       
         })
           .then(function () {

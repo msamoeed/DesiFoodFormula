@@ -74,48 +74,46 @@ const firebaseConfig = {
   var signedInUser;
   var buttonText;
   function SignIn() {
-  
-  
+
+
     var email = $("#modalLRInput10").val();
     var pass = $("#modalLRInput11").val();
-    firebase.auth().signInWithEmailAndPassword(email, pass).then(function (userCreds) {
+    firebase.auth().signOut().then(function() {
+      console.log('Signed Out');
+      firebase.auth().signInWithEmailAndPassword(email, pass).then(function (userCreds) {
   
-      admin = firebase.auth().currentUser;
-      var uid = admin.uid;
-  
-      alert(uid);
-      localStorage.setItem("adminUid", uid);
-  
-     
-      // docRef.get().then(function (doc) {
-      //   if (doc.exists) {
-      //     var adminData = doc.data();
-      //     var decoded = JSON.stringify(adminData);
-  
-      //     buttonText = decoded;
-      //   } else {
-      //     // doc.data() will be undefined in this case
-      //     console.log("No such document!");
-      //   }
-      // }).catch(function (error) {
-      //   console.log("Error getting document:", error);
-      // });
-  
-    }).catch(function (error) {
-  
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // [START_EXCLUDE]
-      if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password.');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
-  
+        user = firebase.auth().currentUser;
+        var uid = user.uid;
+         
+    
+        localStorage.setItem("adminUid", uid);
+    
+       
+        if (localStorage.getItem("uid") != null)
+        window.location.href = 'adminHomepage.html';
+    
+      }).catch(function (error) {
+    
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+    
+      });
+    }, function(error) {
+      console.error('Sign Out Error', error);
     });
+    
+    
     // [END authwithemail]
   }
+
+  
   $("#logInButton").click(function () {
   
     var pass = $("#modalLRInput11").val();
@@ -126,3 +124,24 @@ const firebaseConfig = {
       window.location.href = 'adminHomepage.html';
   });
   
+
+  $("#admin-logout").click(function(){
+
+    firebase.auth().signOut().then(function() {
+      console.log('Signed Out');
+    }, function(error) {
+      console.error('Sign Out Error', error);
+    });
+  
+    localStorage.setItem("adminUid", null);
+  
+    window.location.href = 'adminLogin.html';
+  
+  
+  
+  
+    
+  
+  
+  
+   });
