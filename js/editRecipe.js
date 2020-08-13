@@ -39,7 +39,7 @@ var foodIdEdit;
     querySnapshot.forEach(function (doc) {
 
         
-        foodIdEdit = doc.data().id;
+        foodIdEdit = doc.data().recipeId;
         
   // var set =        localStorage.setItem("editFoodId", doc.data().id);  
 

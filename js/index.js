@@ -328,7 +328,10 @@ $(document).on("click",".checkButton",function() {
 
 
 
-      
+  //First letter capital
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   
 
  
@@ -361,7 +364,6 @@ $("#searchIcon").click(function(){
       // doc.data() is never undefined for query doc snapshots
       var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
       $("#recipeCards").append(htmlString);
-      alert(doc.data().name);
 
 
     });

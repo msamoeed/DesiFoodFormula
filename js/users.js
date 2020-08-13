@@ -92,7 +92,20 @@ $(document).on("click", ".deleteUser", function () {
         });
     });
 
-   $('#'+userId).remove();
+  
+
+
+   firebase.admin.auth().deleteUser(userId)
+  .then(function() {
+    console.log('Successfully deleted user');
+  })
+  .catch(function(error) {
+    console.log('Error deleting user:', error);
+  });
+
+
+
+ // $('#'+userId).remove();
 
 });
 
