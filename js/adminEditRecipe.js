@@ -1,7 +1,15 @@
 
 //DATABASE INSTANCE
 
+var vOneLS = localStorage.getItem("adminUid");  
 
+
+db.collection("admins").doc(vOneLS)
+.onSnapshot(function(doc) {
+    
+ $('#btnGroupDrop1').html(doc.data().username);
+
+});
 
 var db = firebase.firestore();
 
@@ -9,9 +17,9 @@ var db = firebase.firestore();
 var foodIdEdit;
 
 var edit = localStorage.getItem("recipeID1");
-alert(edit);
 
-db.collection("menu").where('recipeId', '==', edit)
+
+db.collection("menu").doc(edit)
     .get()
     .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
@@ -148,8 +156,6 @@ $('#submitButton').click(function () {
     alert("editing");
 
     var imgdownload = localStorage.getItem("linkOfImage");
-    alert("Edit: "+edit);
-    alert("FoodIdEdit: "+foodIdEdit);
 
     db.collection("menu").where("recipeId", "==", edit).set({
         image: imgdownload, // <======= this part  took me ages to get right.

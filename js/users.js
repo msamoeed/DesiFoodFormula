@@ -4,7 +4,7 @@ var db = firebase.firestore();
 
 var vOneLS = localStorage.getItem("adminUid");
 
-//  alert(vOneLS);
+
 db.collection("admins").doc(vOneLS)
     .onSnapshot(function (doc) {
 
@@ -55,7 +55,7 @@ function search(force) {
             querySnapshot.forEach(function (doc) {
                 var username22 = doc.data().username;
                 var username33 = username22.toLowerCase();
-                alert(username33);
+              
                 if (username33.startsWith(searchValue)) {
                     var htmlString = ' <div id="' + doc.data().uid + '" class="row card1"> <div class="col-lg-2"> <img id="images" src="images/user.png" alt="User"></div> <div class="col-lg-7"> <h2 id="username"> ' + capitalizeFirstLetter(doc.data().username) + '</h2> <p id="email">' + doc.data().email + '</p></div><div class="col-lg-3"> <button type="button" id="' + doc.data().uid + '" class="btn btn-danger deleteUser"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button> <button type="button" id="' + doc.data().uid + '" class="btn btn-dark editUser"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button> </div> </div> '
                     $("#userCards").append(htmlString);

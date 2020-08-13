@@ -17,7 +17,7 @@ var db = firebase.firestore();
 var vOneLS = localStorage.getItem("foodId");
 
 
-alert(vOneLS);
+
 
 db.collection("menu").where("recipeId", "==", (vOneLS)).limit(1)
   .get()

@@ -77,6 +77,8 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+
+//To remove from favorite
 $(document).on("click", ".checkButton2", function () {
   var foodId = $(this).attr("id");
 
@@ -89,6 +91,8 @@ $(document).on("click", ".checkButton2", function () {
   }).catch(function (error) {
     console.error("Error removing document: ", error);
   });
+
+  $('#' + foodId).remove();
 
 });
 

@@ -1,3 +1,15 @@
+var vOneLS = localStorage.getItem("adminUid");  
+
+
+db.collection("admins").doc(vOneLS)
+.onSnapshot(function(doc) {
+    
+ $('#btnGroupDrop1').html(doc.data().username);
+
+});
+
+
+
 // Scroll location identifier for navbar
 $(document).ready(function () {
     if ($(document).scrollTop() > $("nav").height() / 2) {
@@ -162,14 +174,12 @@ function search(force) {
             querySnapshot.forEach(function (doc) {
                 var recipeName22 = doc.data().name;
                 var recipeName33 = recipeName22.toLowerCase();
-                // alert(recipeName33+ "boooo");
+              
                 if (recipeName33.startsWith(searchValue)) {
                     var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.data().recipeId + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
                     $("#recipeCards").append(htmlString);
                 }
-                // else{
-                //     alert("no match!");
-                // }
+              
 
             });
         })
@@ -194,7 +204,7 @@ db.collection("menu").limit(limit)
     .get()
     .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.data().recipeId + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.data().recipeId + '" >Delete</a> </div></div>'
+            var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.id + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div>'
             $("#recipeCards").append(htmlString);
 
         });
@@ -222,7 +232,7 @@ $('#showMore1').click(function () {
         .get()
         .then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
-                var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' + doc.data().recipeId + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.data().recipeId + '" >Delete</a> </div></div>'
+                var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6 ' +doc.id + '" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >Edit</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div>'
                 $("#recipeCards").append(htmlString);
 
             });
@@ -262,7 +272,6 @@ $("#searchIcon").click(function () {
     var node = document.getElementById('recipeCards');
     node.innerHTML = "";
 
-    alert(name);
     db.collection("menu").where('name', '==', name)
         .get()
         .then(function (querySnapshot) {

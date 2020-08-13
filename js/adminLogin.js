@@ -17,7 +17,6 @@ const firebaseConfig = {
   
   // //SIGN UP ON PRESS//
   $("#signUpButton").click(function () {
-      alert("sign up  button clicked");
     addAdminDataSignUp();
     alert("Signed up!");
   });
@@ -40,7 +39,7 @@ const firebaseConfig = {
   
         admin = firebase.auth().currentUser;
         var uid = admin.uid;
-        alert(uid);
+       
         console.log("the id of the admin is:::: " + uid);
         console.log("admin is " + JSON.stringify(admin));
         db.collection("admins").doc(uid).set({
@@ -65,7 +64,7 @@ const firebaseConfig = {
       })
       .catch(function (error) {
         console.log("error occured");
-        alert(error.message +"helloooo");
+         
       });
   }
   

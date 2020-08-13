@@ -2,7 +2,7 @@ var db = firebase.firestore();
 
 var vOneLS = localStorage.getItem("adminUid");  
 
-//  alert(vOneLS);
+
 db.collection("admins").doc(vOneLS)
 .onSnapshot(function(doc) {
     

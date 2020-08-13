@@ -162,14 +162,12 @@ function search(force) {
       querySnapshot.forEach(function (doc) {  
           var recipeName22 = doc.data().name;
           var recipeName33 = recipeName22.toLowerCase();
-          // alert(recipeName33+ "boooo");
+   
           if(recipeName33.startsWith(searchValue)){
               var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image +'"  ><div class="card-body"><h5 class="card-title"> ' +  capitalizeFirstLetter( doc.data().name)  + '   </h5><p class="card-text"> ' + capitalizeFirstLetter( doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.data().recipeId + '" >See More</a></div></div> '
               $("#recipeCards").append(htmlString);
           }
-          // else{
-          //     alert("no match!");
-          // }
+         
 
       });
   })
@@ -305,7 +303,7 @@ $("#logInButton").click(function () {
 
  
   SignIn();
-    alert(localStorage.getItem("uid"));
+    // alert(localStorage.getItem("uid"));
  
 });
 
@@ -397,7 +395,7 @@ $("#searchIcon").click(function(){
     var node = document.getElementById('recipeCards');
     node.innerHTML = "";
 
-    alert(name);
+
     db.collection("menu").where('name', '==', name)
   .get()
   .then(function (querySnapshot) {
