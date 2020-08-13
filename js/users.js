@@ -34,38 +34,38 @@ function capitalizeFirstLetter(string) {
 
 
 //search user 
-$('input').keyup(function(e) {
+$('input').keyup(function (e) {
     clearTimeout($.data(this, 'timer'));
     if (e.keyCode == 13)
-      search(true);
+        search(true);
     else
-      $(this).data('timer', setTimeout(search, 500));
+        $(this).data('timer', setTimeout(search, 500));
 });
 
 
 function search(force) {
-   
-    var searchValue = $('#searchUser').val(); 
+
+    var searchValue = $('#searchUser').val();
     if (!force && searchValue.length < 1) return; //wasn't enter, not > 2 char
     var node = document.getElementById('userCards');
-    node.innerHTML = "";  
+    node.innerHTML = "";
     db.collection("users")
-    .get()
-    .then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {  
-            var username22 = doc.data().username;
-            var username33 = username22.toLowerCase();
-            alert(username33);
-            if(username33.startsWith(searchValue)){
-                var htmlString = ' <div id="' + doc.data().uid + '" class="row card1"> <div class="col-lg-2"> <img id="images" src="images/user.png" alt="User"></div> <div class="col-lg-7"> <h2 id="username"> ' + capitalizeFirstLetter(doc.data().username) + '</h2> <p id="email">' + doc.data().email + '</p></div><div class="col-lg-3"> <button type="button" id="' + doc.data().uid + '" class="btn btn-danger deleteUser"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button> <button type="button" id="' + doc.data().uid + '" class="btn btn-dark editUser"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button> </div> </div> '
-                $("#userCards").append(htmlString);
-            }
+        .get()
+        .then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                var username22 = doc.data().username;
+                var username33 = username22.toLowerCase();
+                alert(username33);
+                if (username33.startsWith(searchValue)) {
+                    var htmlString = ' <div id="' + doc.data().uid + '" class="row card1"> <div class="col-lg-2"> <img id="images" src="images/user.png" alt="User"></div> <div class="col-lg-7"> <h2 id="username"> ' + capitalizeFirstLetter(doc.data().username) + '</h2> <p id="email">' + doc.data().email + '</p></div><div class="col-lg-3"> <button type="button" id="' + doc.data().uid + '" class="btn btn-danger deleteUser"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button> <button type="button" id="' + doc.data().uid + '" class="btn btn-dark editUser"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button> </div> </div> '
+                    $("#userCards").append(htmlString);
+                }
 
+            });
+        })
+        .catch(function (error) {
+            console.log("Error getting documents: ", error);
         });
-    })
-    .catch(function (error) {
-        console.log("Error getting documents: ", error);
-    });
 }
 
 // $('#search1').click(function(){
@@ -85,20 +85,18 @@ $(document).on("click", ".deleteUser", function () {
         });
     });
 
-  
 
-
-   firebase.admin.auth().deleteUser(userId)
-  .then(function() {
-    console.log('Successfully deleted user');
-  })
-  .catch(function(error) {
-    console.log('Error deleting user:', error);
-  });
+    firebase.admin.auth().deleteUser(userId)
+        .then(function () {
+            console.log('Successfully deleted user');
+        })
+        .catch(function (error) {
+            console.log('Error deleting user:', error);
+        });
 
 
 
- // $('#'+userId).remove();
+    $('#' + userId).remove();
 
 });
 
@@ -110,15 +108,15 @@ $(document).on("click", ".editUser", function () {
     localStorage.setItem("userId", userId);
     if (localStorage.getItem("userId") != null) {
         window.location.href = 'editUser.html';
-        
+
     }
-    else{
+    else {
         alert("User ID null");
     }
 
 });
 
 
-$("#addUsers1").click(function(){
+$("#addUsers1").click(function () {
     window.location.href = "addUsers.html";
 });

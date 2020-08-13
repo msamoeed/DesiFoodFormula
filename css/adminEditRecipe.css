@@ -239,122 +239,40 @@
         }
     
     }
-/* Without Search Section */
 
-.withoutSearch{
-    padding: 100px;
-    padding-top: 1%;
-    text-align: center;
-  }
-  
-  .recipeCard{
-    padding: 3% 2%;
-    /* margin: 0.5rem; */
-  }
-  
-  .card:hover{
-    background-color: lightgrey;
-  }
-  
-  /* Search Section */
-  .searchByIngredients{
-    padding: 100px;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    background-color: white;
-    position: relative;
-    margin-left: 4%;
-    margin-right: 4%;
-    border-radius: 4%;
-  }
-  
-  #category{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  
-  #ingredientsAdded{
-    color: white;
-    background-color: dimgray;
-    border-radius: 1rem;
-    padding: 50px;
-  }
-  
-  #searchByName{
-    display: inline;
-    width: 250px;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  #searchIt{
-    margin: auto;
-    width: 50%;
-  }
-  
-  #searchIng{
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .ingredient-remove{
-    margin: 1rem;
-  }
-  
-  #addrecipebutton1, #removerecipebutton1{
-    color: white;
-  }
-  
-  .showMore{
-    text-align: center;
-    padding-bottom: 3%;
-    width: 100%;
-    position: relative;
-  }
-  
-  
-  
-  /* CTA Section */
-  .cta {
-    color: #eeeeee;
-    background-color: #31383c;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 300;
-    padding-bottom: 0.3125rem;
-  }
-  
-  .cta-col-1{
-    display: inline-block;
-  }
-  
-  .cta-col-1 img {
-    width: 9.77rem;
-    height: 5.69rem;
-  }
-  
-  .cta-col-1 p {
-    margin-top: 1rem;
-  }
-  
-  .paraInFooter {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-  }
-  
-  
-  .icons{
-    padding: 0% 5%;
-    
-  }
-  
-  .icons:hover{
-    color: #32c5d2;
-  }
-  
-  #linkToAdmin{
-    color: white;
-    text-decoration: underline;
-  }
-  
-  
+    /* Form css */
+    .form-reipeadder{
+        text-align: center;
+        margin-left: 35pc;
+        margin-right:35pc;
+        margin-top: 15pc;
+        margin-bottom: 20pc;
+        align-self: center;
+        border: solid;
+        padding: 5pc;
+        border-color: lightgrey; 
+        background-color: white;
+        position: relative;
+        border-radius: 5%;
+      }
+      #badgeRec{
+        background-color: #318fb5;
+        
+      }
+      
+      #recipePicture{
+        background-image: url(images/food.jpg);
+        height: 400px;
+        width: 700px;
+      }
+      #badgeStep{
+        color: white;
+        background-color:#005086;
+      }
+      .header-recipe{
+        margin: 1pc;
+        padding: 0.7pc;
+        background: #3f444a;
+        background-color: #b0cac7;
+        text-decoration-color: #cfd9e6;
+      } 
