@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DesiFoodFormula</title>
+     <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- Font-awesome  -->
+    <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Custom CSS (styles.css) -->
+    <link rel="stylesheet" href="css/adminEditRecipe.css">
+    <!-- Tags for responsiveness -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+</head>
+
+<body>
+
+    <img src="images/salad.jpg" id="bg" alt="">
+
+    <!---------------------- Navbar ------------------------->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"> <img class="nav-logo" src="images/logo.png" alt="logo" width="50px"> </a>
+        <h3> DesiFoodFormula</h3>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            
+                <div class="btn-group profile" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Abdul Moeed
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item drop" href="#"><i class="fa fa-cutlery icons" aria-hidden="true"></i> Recipes</a>
+                    <a class="dropdown-item drop" href="#"><i class="fa fa-heart icons" aria-hidden="true"></i> Users</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item drop" href="#"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item drop" href="#"><i class="fa fa-sign-out icons" aria-hidden="true"></i> Logout</a>
+                  </div>
+                </div>
+              </li>
+          </ul>
+        </div>
+      </nav>
+      <!---------------------End of Navbar---------------------------->
+
+     <!---------------------- Main Body ------------------------------>
+     <form class="form-reipeadder">
+
+        <h3>
+            Edit Recipe
+        </h3>
+
+        <div class="form-row form-rowRecipe ">
+
+            <div class="col col-recipeform">
+
+                <input type="text"  id="recipeName" class="form-control" placeholder="Name of Recipe">
+            </div>
+
+            <div class="col col-recipeform">
+                <input type="text" id="totalTimeMins"class="form-control" placeholder="Total Time">
+            </div>
+
+            <p>
+                mins
+            </p>
+
+
+        </div>
+
+        </div>
+
+        <div class="form-row form-rowRecipe">
+
+            <div class="col">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Add an ingrediant"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingred">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" id="addrecipebutton" type="button">+ </button>
+                        <button class="btn btn-outline-secondary" id="removerecipebutton" type="button">-</button>
+                    </div>
+                </div>
+                <!-- <ul class="list-group" id="ingredList">
+                    <li class="list-group-item active">Ingredients</li>
+
+                </ul> -->
+                <div>
+                    <h5 class="list-group header-recipe" id="allIngreds" > Ingredients</h5>
+
+                </div>
+            </div>
+
+
+            <div class="col">
+            </div>
+
+            
+        </div>
+
+        <h5 class="h5-steps">
+           Edit Steps and Photo
+        </h5>
+
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Add Steps"
+                aria-label="Recipient's username" aria-describedby="basic-addon2" id="steps">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" id="addstepsbutton" type="button">+ </button>
+                <button class="btn btn-outline-secondary" id="removestepsbutton" type="button">-</button>
+
+                <div class="input-group mb-0">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <h5 class="list-group2 header-recipe"> STEPS </h5>
+        <ol class="list-group2" id="steps2List">
+            
+
+        </ol>
+
+       
+
+        <h5 class="h5-steps">
+            Edit Description
+         </h5>
+ 
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Description</span>
+            </div>
+            <textarea class="form-control" id="recipeDescription" aria-label="With textarea"  rows="8"></textarea>
+          </div>
+
+
+
+
+          <button type="button" class="btn btn-secondary btn-lg btn-block submitButtonR" id="submitButton">Submit</button>
+
+
+
+    </form>
+     <!---------------------- End of Main Body ------------------------------>
+    
+      
+
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Custom JS (index.js) -->
+    <script src="js/adminLogin.js" charset="utf-8"></script>
+    <script src="js/adminEditRecipe.js" charset="utf-8"></script>
+
+</body>
+
+</html>

@@ -33,7 +33,7 @@ var foodIdEdit;
 
   var edit = localStorage.getItem("editFood");  
 
-  db.collection("menu").where('id', '==',edit)
+  db.collection("menu").where('recipeId', '==',edit)
   .get()
   .then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {

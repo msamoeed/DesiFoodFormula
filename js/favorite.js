@@ -59,17 +59,7 @@ db.collection("userFav").where('uid', '==', uid)
 
 
 
-$(document).on("click", ".checkButton", function () {
-  var foodId = $(this).attr("id");
 
-  localStorage.setItem("editFood", foodId);
-
-  if (localStorage.getItem("editFood") != null) {
-    window.location.href = 'editRecipe.html';
-
-  }
-
-});
 
 $(document).on("click", ".checkButton2", function () {
   var foodId = $(this).attr("id");
@@ -115,3 +105,5 @@ $(document).on("click", ".checkButton", function () {
   }
 
 });
+
+

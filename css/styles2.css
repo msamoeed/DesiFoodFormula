@@ -61,11 +61,10 @@ html {
   align-self: center;
   border: solid;
   padding: 5pc;
-  border-color: lightgrey;
-
-
-  
+  border-color: lightgrey; 
 }
+
+
 ul{
   list-style-type: none;
 }

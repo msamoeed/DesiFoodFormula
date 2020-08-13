@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>DesiFoodFormula</title>
+     <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicons.png">
     <!-- Font-awesome  -->
     <script src="https://kit.fontawesome.com/63ffb9f775.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
@@ -24,7 +26,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <!-- Custom CSS (styles.css) -->
-    <link rel="stylesheet" href="css/adminHomepage.css">
+    <link rel="stylesheet" href="css/adminRecipes.css">
     <!-- Tags for responsiveness -->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -69,7 +71,74 @@
       </nav>
       <!---------------------End of Navbar---------------------------->
 
-      
+      <section class="searchByIngredients">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3 id="category">Fruits</h3>
+            <button type="button" id="ing" class="btn btn-dark ing1">Apple</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Banana</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Strawberry</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Kiwi</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Orange</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Watermelon</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Grapefruit</button>
+            <h3 id="category">Vegetables</h3>
+            <button type="button" id="ing" class="btn btn-dark ing1">Zucchini</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Potato</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Onion</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Okra</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Asparagus</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Lettuce</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Carrot</button>
+            <h3 id="category">Pantry</h3>
+            <button type="button" id="ing" class="btn btn-dark ing1">Daal</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Spaghetti</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Macaroni</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Oats</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Rice</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Canned Beans</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Canned Tuna</button>
+            <h3 id="category">Frozen</h3>
+            <button type="button" id="ing" class="btn btn-dark ing1">Chicken</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Beef</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Mutton</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Nuggets</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Pie crust</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Icecream</button>
+            <button type="button" id="ing" class="btn btn-dark ing1">Gyoza wrappers</button>
+          </div>
+          <div class="col-lg-4 col-md-6" id="ingredientsAdded">
+            <input type="text" class="form-control" id="searchByName" placeholder="Recipe Name"><i
+              class="fas fa-search" id="searchIcon"></i>
+            <br>
+            <h3>Ingredients</h3>
+            <div class="input-group mb-2" id="smth">
+              <input type="text" class="form-control" placeholder="Add an ingredient"
+                  aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingred">
+              <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" id="addrecipebutton1" type="button">+ </button>
+                  <button class="btn btn-outline-secondary" id="removerecipebutton1" type="button">-</button>
+              </div>
+          </div>
+              <div id="searchIng">
+                <button type="button" id="clear" class="btn btn-outline-dark clear1">Clear</button>
+              </div>
+            <div id="searchIng">
+              <button type="button" id="searchIt" class="btn btn-light">Search</button>
+            </div>
+          </div>
+          </div>
+      </section>
+    
+      <section class="withoutSearch">
+        <div id="recipeCards" class="row">
+        </div>
+      </section>
+    
+      <!-- Show more button -->
+      <div class="showMore" id="showMore1"> 
+        <button type="button" class="btn btn-light">Show More <i class="fa fa-chevron-down iconss" aria-hidden="true"></i></button>
+      </div>
 
 
 
@@ -78,7 +147,7 @@
 
     <!-- Custom JS (index.js) -->
     <script src="js/adminLogin.js" charset="utf-8"></script>
-    <script src="js/adminLogin.js" charset="utf-8"></script>
+    <script src="js/adminRecipes.js" charset="utf-8"></script>
 
 </body>
 
