@@ -89,7 +89,7 @@ const firebaseConfig = {
         localStorage.setItem("adminUid", uid);
     
        
-        if (localStorage.getItem("uid") != null)
+        if (localStorage.getItem("uid") != 'null')
         window.location.href = 'adminHomepage.html';
     
       }).catch(function (error) {
@@ -120,7 +120,7 @@ const firebaseConfig = {
     var pass = $("#modalLRInput11").val();
     SignIn();
   
-    if (localStorage.getItem("adminUid") != null)
+    if (localStorage.getItem("adminUid") != 'null')
       window.location.href = 'adminHomepage.html';
   });
   

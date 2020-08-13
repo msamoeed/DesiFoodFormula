@@ -59,29 +59,7 @@ db.collection("userFav").where('uid', '==', uid)
 
 
 
-$(document).on("click", ".checkButton", function () {
-  var foodId = $(this).attr("id");
 
-  localStorage.setItem("editFood", foodId);
-
-  if (localStorage.getItem("editFood") != null) {
-    window.location.href = 'editRecipe.html';
-
-  }
-
-});
-
-$(document).on("click", ".checkButton2", function () {
-  var foodId = $(this).attr("id");
-
-  db.collection("menu").doc(foodId).delete().then(function () {
-    console.log("Document successfully deleted!");
-  }).catch(function (error) {
-    console.error("Error removing document: ", error);
-  });
-
-
-});
 //First letter capital
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -109,7 +87,7 @@ $(document).on("click", ".checkButton", function () {
 
   localStorage.setItem("foodId", foodId);
 
-  if (localStorage.getItem("foodId") != null) {
+  if (localStorage.getItem("foodId") != null) { 
     window.location.href = 'recipe.html';
 
   }
