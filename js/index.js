@@ -460,3 +460,19 @@ var datake= db.collection("userMessages").doc(newId).set({
   
     return autoId;
   }
+
+
+  //Forgot Password
+
+  $('#forgot-user').click(function(){
+    var auth = firebase.auth();
+
+    var emailAddress  = $("#modalLRInput10").val();
+
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+
+      alert("Reset email sent!")
+    }).catch(function(error) {
+      // An error happened.
+    });
+  });

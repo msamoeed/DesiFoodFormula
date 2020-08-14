@@ -57,7 +57,6 @@ $("#removerecipebutton").click(function(){
 $("#addstepsbutton").click(function() {
  
   var ingr = $("#steps").val();
-  steps.push(ingr);
   
   var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc" id="badgeStep" class="btn btn-primary  badgerecipe">' + ingr ;
 
@@ -99,7 +98,8 @@ $(document).ready(function(){
 
       imageURL =  uploadTask.snapshot.ref.getDownloadURL();
 
-      imageURL.then(function(downloadURL) {
+      imageURL.then(function(downloadURL) { 
+        localStorage.setItem("linkOfImage", null);  
 
        localStorage.setItem("linkOfImage", downloadURL.toString());  
 
@@ -119,7 +119,7 @@ $(document).ready(function(){
 
 $('#submitButton').click(function(){
   name = $('#recipeName').val();
-  totalTime = $('#totalTimeMins').val().toString();
+  totalTime = $('#totalTimeMins').val();
   description = $('#recipeDescription').val();
 
 var imgdownload = localStorage.getItem("linkOfImage");  
@@ -131,7 +131,7 @@ var imgdownload = localStorage.getItem("linkOfImage");
    ingredients : data,
    steps : steps,
    uid : vOneLS,
-   time : totalTime,
+   minutes : totalTime,
    id : generateUniqueFirestoreId(),
 
   })

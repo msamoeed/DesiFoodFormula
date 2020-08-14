@@ -193,3 +193,33 @@ db.collection("users").doc(vOneLS)
 
 
  });
+
+
+ (".nav-logo").click(function () {
+
+  var checkLogin = localStorage.getItem("uid");
+
+
+
+  if (checkLogin != "null") {
+
+    window.location.href = 'homeAfterLogin.html';
+
+  }
+
+  else {
+    window.location.href = 'index.html';
+
+  }
+
+});
+
+
+$('#log-out').click(function () {
+
+
+  localStorage.setItem("uid", null);
+  window.location.href = 'index.html';
+
+
+});

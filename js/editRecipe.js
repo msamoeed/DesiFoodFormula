@@ -102,7 +102,6 @@ $("#removerecipebutton").click(function(){
 $("#addstepsbutton").click(function() {
  
   var ingr = $("#steps").val();
-  steps.push(ingr);
   
   var htmlString =  '<button type="button"  style=" text-align:center;margin:0.3pc" id="badgeStep" class="btn btn-primary  badgerecipe">' + ingr ;
 
@@ -164,8 +163,9 @@ $(document).ready(function(){
 
 $('#submitButton').click(function(){
   name = $('#recipeName').val();
-  totalTime = $('#totalTimeMins').val().toString();
+  totalTime = $('#totalTimeMins').val();
   description = $('#recipeDescription').val();
+  var foodIdEdit = localStorage.getItem("editFood");  
 
 var imgdownload = localStorage.getItem("linkOfImage");  
 
@@ -175,9 +175,8 @@ var imgdownload = localStorage.getItem("linkOfImage");
    description: description,
    ingredients : data,
    steps : steps,
-   uid : vOneLS,
-   time : totalTime,
-   id : foodIdEdit,
+   minutes : totalTime,
+   recipeId : foodIdEdit,
 
   })
     .then(function () {
@@ -189,5 +188,24 @@ var imgdownload = localStorage.getItem("linkOfImage");
       console.error("Error writing document: ", error);
     });
 
+
+});
+
+(".nav-logo").click(function () {
+
+  var checkLogin = localStorage.getItem("uid");
+
+
+
+  if (checkLogin != "null") {
+
+    window.location.href = 'homeAfterLogin.html';
+
+  }
+
+  else {
+    window.location.href = 'index.html';
+
+  }
 
 });

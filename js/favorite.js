@@ -34,19 +34,19 @@ db.collection("userFav").where('uid', '==', uid)
   .then(function (querySnapshot) {
     querySnapshot.forEach(function (doc1) {
 
-      db.collection("menu").where('recipeId', '==', doc1.data().recipeId)
+
+      db.collection("menu").doc(doc1.data().recipeId)
         .get()
-        .then(function (querySnapshot) {
-          querySnapshot.forEach(function (doc) {
+        .then(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >See More</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc.id + '" >Delete</a> </div></div> '
+            var htmlString = ' <div class="card recipeCard col-lg-3 col-md-4 col-sm-6" id="recipeCardsIndex" ><img id= "mainImage" class="img-fluid img-thumbnail"   src= "' + doc.data().image + '"  ><div class="card-body"><h5 class="card-title"> ' + capitalizeFirstLetter(doc.data().name) + '   </h5><p class="card-text"> ' + capitalizeFirstLetter(doc.data().description) + '</p><a  class="btn btn-outline-info checkButton"  id= "' + doc.id + '" >See More</a> <a  class="btn btn-outline-danger checkButton2"  id= "' + doc1.id + '" >Delete</a> </div></div> '
             $("#recipeCards").append(htmlString);
 
 
-          });
+         
         })
         .catch(function (error) {
-          console.log("Error getting documents: ", error);
+          console.log("Error getting documents: ", error);  
         });
 
 
@@ -101,3 +101,21 @@ $(document).on("click", ".checkButton", function () {
 });
 
 
+(".nav-logo").click(function () {
+
+  var checkLogin = localStorage.getItem("uid");
+
+
+
+  if (checkLogin != "null") {
+
+    window.location.href = 'homeAfterLogin.html';
+
+  }
+
+  else {
+    window.location.href = 'index.html';
+
+  }
+
+});
